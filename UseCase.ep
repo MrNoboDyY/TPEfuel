@@ -43,18 +43,6 @@
             <use xlink:href="#4bb121742d6f4f6c917204aed7119461" xmlns:xlink="http://www.w3.org/1999/xlink"/>
             <foreignObject x="46.5" y="186" width="567" height="0" p:name="text" id="c87410bc86044b4c96f145d9d1f6cefe" style="font-family: Arial; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(0, 0, 0); fill-opacity: 1; color: rgb(0, 0, 0); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">
                 </div></foreignObject>
-        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.NativeGUI:TabBox" id="3ef9a11ce262410da9142b0f57772997" transform="matrix(1,0,0,1,39,853)"><p:metadata><p:property name="box"><![CDATA[745,372]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="tabLabel"><![CDATA[#EXPERTISE|SOLDE |STATUT DE LA CARTE|LISTE CHARGEMENTS|CONTROLE CODE POMPISTE]]></p:property><p:property name="textColor"><![CDATA[#000000FF]]></p:property><p:property name="textFont"><![CDATA[Comic Sans MS|bold|normal|13px|none]]></p:property></p:metadata>
-            <foreignObject x="0" y="0" width="745" height="372" p:name="htmlObject" id="1931a16c17214df8ba47ff229fe2074d" style="font-family: Comic Sans MS; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none; fill: rgb(0, 0, 0); fill-opacity: 1;">
-                <html:div xmlns:html="http://www.w3.org/1999/xhtml" style="-moz-box-sizing: border-box; overflow: hidden; position: relative; width: 745px; height: 372px;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" p:name="div" id="fb5f1174321d4050b9396cc4d126584c">
-                    <tabbox flex="1" style="pointer-events: none; margin: 0px ! important; width: 745px; height: 372px; font-family: Comic Sans MS; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none; color: rgb(0, 0, 0); opacity: 1;" p:name="tabbox" id="e7ec24808545407fafdb3c58d77db225" width="745" height="372" disabled="false" selectedIndex="0">
-                      <tabs p:name="tabs" id="c4720a62e84e43f5a8bdaeabc582ecbb" orient="horizontal" value=""><tab label="EXPERTISE" selected="true"/><tab label="SOLDE " selected="false"/><tab label="STATUT DE LA CARTE" selected="false"/><tab label="LISTE CHARGEMENTS" selected="false"/><tab label="CONTROLE CODE POMPISTE" selected="false"/></tabs>
-                      <tabpanels flex="1" selectedIndex="0">
-                        <tabpanel/>
-                      </tabpanels>
-                    </tabbox>
-                    <html:div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></html:div>
-                </html:div>
-            </foreignObject>
         </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Sketchy.GUI:textbox" id="efbb705ba46e46c5b4ca898e73cc82cd" transform="matrix(1,0,0,1,55,205)"><p:metadata><p:property name="box"><![CDATA[200,25]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#CCFFFFFF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[1|]]></p:property><p:property name="textContent"><![CDATA[numéro de carte]]></p:property><p:property name="textFont"><![CDATA[Comic Sans MS|normal|italic|13px|none]]></p:property><p:property name="textColor"><![CDATA[#000000FF]]></p:property><p:property name="textAlign"><![CDATA[0,1]]></p:property></p:metadata>
             <g p:name="rect" id="55a8d298d39a47e2857ca26899f64721" transform="translate(0.5,0.5)" style="fill: rgb(204, 255, 255); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1; stroke-width: 1;">
     			<path style="stroke-linejoin: round; stroke: rgb(0, 0, 0); stroke-opacity: 1; stroke-width: 1;" p:name="line1" id="2db70c0277d64342b121a3dbe9f3a530" transform="translate(0.5,0.5)" d="M 0 0 C 67 -1 133 -1 200 0 C 200 8 200 17 200 25 C 133 25 67 25 0 25 C 0 17 0 8 0 0 z"/>
@@ -281,7 +269,7 @@
             <use xlink:href="#6efe32e141ff4368b224da1db406a0d0" xmlns:xlink="http://www.w3.org/1999/xlink" p:name="outArrow1" id="30bf9ed976464ad1b4a8a3f0e858ea95" style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 4;"/>
             <text p:name="text" id="bf84062e1fdf473ab06d217cf5d48c1e" style="fill: rgb(0, 0, 0); fill-opacity: 1; font-family: Helvetica; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;">
                 <textPath xlink:href="#6efe32e141ff4368b224da1db406a0d0" xmlns:xlink="http://www.w3.org/1999/xlink" startOffset="50%" text-anchor="middle" alignment-baseline="middle">
-                    <tspan dy="-4" p:name="textSpan" id="50472c846a974bc98a8dfbdb18a1afcf" dx="-32"></tspan>
+                    <tspan dy="-4" p:name="textSpan" id="50472c846a974bc98a8dfbdb18a1afcf" dx="-32"/>
                 </textPath>
             </text>
 
@@ -298,7 +286,7 @@
             <use xlink:href="#bd01705a3fd743f5830ee67eb591963e" xmlns:xlink="http://www.w3.org/1999/xlink" p:name="outArrow1" id="ed40c4dc5109498cb38eb7c14d8abf5f" style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 4;"/>
             <text p:name="text" id="6ea18a40ba74415caca25d079683a376" style="fill: rgb(0, 0, 0); fill-opacity: 1; font-family: Helvetica; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;">
                 <textPath xlink:href="#bd01705a3fd743f5830ee67eb591963e" xmlns:xlink="http://www.w3.org/1999/xlink" startOffset="50%" text-anchor="middle" alignment-baseline="middle">
-                    <tspan dy="-4" p:name="textSpan" id="5e87317106634bd5a42398cb1c44067f" dx="-32"></tspan>
+                    <tspan dy="-4" p:name="textSpan" id="5e87317106634bd5a42398cb1c44067f" dx="-32"/>
                 </textPath>
             </text>
 
@@ -645,4 +633,16 @@
                 </textPath>
             </text>
 
+        </g></Content></Page><Page><Properties><Property name="name">TOMCARD</Property><Property name="id">1489996269674_6821</Property><Property name="width">1514</Property><Property name="height">887</Property><Property name="dimBackground"/><Property name="transparentBackground">true</Property><Property name="backgroundColor">#FFFFFFFF</Property><Property name="background">transparent</Property></Properties><Content><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.NativeGUI:TabBox" id="28c6dbaec90245ea91c0d6157065111b" transform="matrix(1,0,0,1,7,6)"><p:metadata><p:property name="box"><![CDATA[745,372]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="tabLabel"><![CDATA[#EXPERTISE|SOLDE |STATUT DE LA CARTE|LISTE CHARGEMENTS|CONTROLE CODE POMPISTE]]></p:property><p:property name="textColor"><![CDATA[#000000FF]]></p:property><p:property name="textFont"><![CDATA[Comic Sans MS|bold|normal|13px|none]]></p:property></p:metadata>
+            <foreignObject x="0" y="0" width="745" height="372" p:name="htmlObject" id="42686d4815984b19aa3851a154113de1" style="font-family: Comic Sans MS; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none; fill: rgb(0, 0, 0); fill-opacity: 1;">
+                <html:div xmlns:html="http://www.w3.org/1999/xhtml" style="-moz-box-sizing: border-box; overflow: hidden; position: relative; width: 745px; height: 372px;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" p:name="div" id="e68350a6f5794279ac7589eecfa06f49">
+                    <tabbox flex="1" style="pointer-events: none; margin: 0px ! important; width: 745px; height: 372px; font-family: Comic Sans MS; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none; color: rgb(0, 0, 0); opacity: 1;" p:name="tabbox" id="75078ad801b943fca83140bba4ccbc63" width="745" height="372" disabled="false" selectedIndex="0">
+                      <tabs p:name="tabs" id="f01bb0a7a19245f1823f112d6555f8bf" orient="horizontal" value=""><tab label="EXPERTISE" selected="true" first-tab="true"/><tab label="SOLDE " selected="false" afterselected="true"/><tab label="STATUT DE LA CARTE" selected="false"/><tab label="LISTE CHARGEMENTS" selected="false"/><tab label="CONTROLE CODE POMPISTE" selected="false" last-tab="true"/></tabs>
+                      <tabpanels flex="1" selectedIndex="0">
+                        <tabpanel/>
+                      </tabpanels>
+                    </tabbox>
+                    <html:div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></html:div>
+                </html:div>
+            </foreignObject>
         </g></Content></Page></Pages></Document>

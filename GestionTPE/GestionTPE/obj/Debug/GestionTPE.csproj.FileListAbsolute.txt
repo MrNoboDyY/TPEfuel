@@ -1,0 +1,10 @@
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.baml
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.baml
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\App.baml
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoginView.g.cs
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.g.cs
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.g.cs
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\App.g.cs
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.cache
+c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.lref
