@@ -5,17 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"      
       xmlns:viewModel="clr-namespace:GestionTPE.ViewModel"
-      d:DesignHeight="300" d:DesignWidth="300"
-	 Title="SoldePointCarteView">
+	 Title="SoldePointCarteView" Height="296" Width="276">
     <Page.DataContext>
         <viewModel:SoldePointCarteViewModel/>
     </Page.DataContext>
-    <Grid Margin="0,0,-541,-156">
+    <Grid Margin="-165,0,-509,-172" Background="#FF80CAE6" Height="468" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="950">
         <Label Content="Numero de Carte" HorizontalAlignment="Left" Margin="47,116,0,0" VerticalAlignment="Top" Height="62" Width="auto"/>
         <Label Content="Historique des Points" HorizontalAlignment="Left" Margin="47,245,0,0" VerticalAlignment="Top" Width="auto" Height="68" RenderTransformOrigin="-0.283,0.397"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="671,116,0,0" VerticalAlignment="Top" Width="75" Height="62"/>
-        <Button Content="Retour Accueil" HorizontalAlignment="Left" Margin="671,266,0,0" VerticalAlignment="Top" Width="auto"/>
-        <Button Content="Deconnexion" HorizontalAlignment="Left" Margin="671,390,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Button Command="{Binding SoldePointCommand}" Content="Valider" HorizontalAlignment="Left" Margin="671,116,0,0" VerticalAlignment="Top" Width="75" Height="62"/>
+        <Button Content="Retour Accueil" HorizontalAlignment="Left" Margin="652,265,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Button Content="Deconnexion" HorizontalAlignment="Left" Margin="661,370,0,0" VerticalAlignment="Top" Width="auto"/>
         <TextBox HorizontalAlignment="Left" Height="62" Margin="230,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="359"/>
         <TextBox HorizontalAlignment="Left" Height="68" Margin="230,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="359"/>
 

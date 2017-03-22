@@ -17,6 +17,7 @@ namespace GestionTPE.Model
 
         private bool isConnected;/* si connecté*/
 
+
      
         //public bool isValid()
         //{

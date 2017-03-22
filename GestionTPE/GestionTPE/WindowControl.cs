@@ -17,7 +17,7 @@ namespace GestionTPE
             /*pouur chaque fenetre win da l'application*/
             foreach (Window win in Application.Current.Windows)
             {
-                /*femer la fenetre dont le nom est indiqué dans l'appel*/
+                /*fermer la fenetre dont le nom est indiqué dans l'appel*/
                 if (win.Title == windowsToClose.ToString())
                     win.Close();
             }

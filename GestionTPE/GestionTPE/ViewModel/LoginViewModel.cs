@@ -16,6 +16,10 @@ namespace GestionTPE.ViewModel
 
         LoginModel loginmodel;/* objet loginmodel*/
 
+        private bool isConnected;
+
+        
+
 
         /* A l'ouverture de l'application constructeur de l'objet vide*/
         public LoginViewModel()
@@ -65,7 +69,22 @@ namespace GestionTPE.ViewModel
             new WindowControl().CloseWindow(WindowsEnum.LoginView);
         }
 
+        //#region IsConnected
 
+        //public bool IsConnected
+        //{ /* vérif si il y a une connection en boolean */
+        //    get
+        //    {
+        //        return isConnected;
+        //    }
+        //    set
+        //    {
+        //        isConnected = value;
+        //        RaisePropertyChanged("IsConnected");
+        //    }
+        //}
+
+        //#endregion
 
         
         /*verifier que les deux champs sont bien rempli pour la connexion*/
@@ -86,20 +105,33 @@ namespace GestionTPE.ViewModel
 
 
         /* se conneter avec l'objet loginmodel*/
-        void Connection()
+        private void Connection()
         {
-            loginmodel.IsConnected = true;/* passer la connexion à vraie avec loginmodel validé*/
+
+            
+            //loginmodel.IsConnected = true;/* passer la connexion à vraie avec loginmodel validé*/
         }
 
         /* envoi depuis le relay de la partie Loyalty/loyaltyview */
-        public ICommand LoyaltyViewCommand { get { return new ViewModelRelay(ShowLoyaltyView, CanShowLoyaltyView); } }
+        public ICommand LoyaltyViewCommand { get { return new ViewModelRelay(ShowLoyaltyView, CanShowLoyaltyView);}}
                
         /* envoi depuis le relay de la connexion*/
-        public ICommand ConnectionCommand { get { return new ViewModelRelay(Connection, CanConnect); } }
+        public ICommand ConnectionCommand { get { return new ViewModelRelay(Connection, CanConnect);}}
 
         /* envoi depuis le relay de la partie Tomcard / Tomcardview*/
-        public ICommand TomcardViewCommand { get { return new ViewModelRelay(Connection, CanShowTomcardView); } }
+        public ICommand TomcardViewCommand { get { return new ViewModelRelay(Connection, CanShowTomcardView);}}
 
+
+        //#region RaisePropertyChanged
+        //private void RaisePropertyChanged(string propertyName)/*Fonction qui annonce le changement de la propriété */
+        //{
+        //    PropertyChangedEventHandler handler = PropertyChanged;
+        //    if (handler != null)/*si l'evenement est diff de null*/
+        //    {
+        //        handler(this, new PropertyChangedEventArgs(propertyName));
+        //    }
+        //}
+        //#endregion
 
     }
 }
