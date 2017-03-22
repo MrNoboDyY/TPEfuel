@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OnlineServerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GetLoyaltyPoints">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardLoyId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetLoyaltyPointsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetLoyaltyPointsResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetLoyaltyBarCodeStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdProduct" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pBarCodeId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetLoyaltyBarCodeStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetLoyaltyBarCodeStatusResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BurnLoyaltyBarCodeBarre">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pBarCodeId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BurnLoyaltyBarCodeBarreResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BurnLoyaltyBarCodeBarreResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FreeLoyaltyBarCode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pBarCodeId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FreeLoyaltyBarCodeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="FreeLoyaltyBarCodeResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HasPendingOperation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HasPendingOperationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="HasPendingOperationResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCardParameter">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCardParameterResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetCardParameterResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AckCardParameterApplied">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pParameterId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AckCardParameterAppliedResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AckCardParameterAppliedResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AckCardParameter">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pParameterId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pStatus" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AckCardParameterResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AckCardParameterResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AckDownloadingCredits">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pLstOrder" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AckDownloadingCreditsResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InitConn">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InitConnResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InitConnResult" nillable="true" type="xs:unsignedInt" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Disconnect">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DisconnectResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBlackListCode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardType" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBlackListCodeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetBlackListCodeResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDownloadingCredits">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDownloadingCreditsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetDownloadingCreditsResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IsManCodeValid">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pCustNum" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pManCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IsManCodeValidResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IsManCodeValidResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CanTransfer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pSourceCardNum" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pDestCardNum" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pAmount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pTransacNr" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pManCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CanTransferResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CanTransferResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Transfer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdPreOrder" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransferResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TransferResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CanCancelTransfer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pTransacNr" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pTransacNrToCancel" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CanCancelTransferResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CanCancelTransferResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendDump">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+            <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+            <xs:element minOccurs="0" name="pData" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendDumpResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SendDumpResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IOnlineServerService_GetLoyaltyPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoyaltyPoints" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetLoyaltyPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoyaltyPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetLoyaltyBarCodeStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoyaltyBarCodeStatus" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetLoyaltyBarCodeStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoyaltyBarCodeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_BurnLoyaltyBarCodeBarre_InputMessage">
+    <wsdl:part name="parameters" element="tns:BurnLoyaltyBarCodeBarre" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_BurnLoyaltyBarCodeBarre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BurnLoyaltyBarCodeBarreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_FreeLoyaltyBarCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:FreeLoyaltyBarCode" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_FreeLoyaltyBarCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FreeLoyaltyBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_HasPendingOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasPendingOperation" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_HasPendingOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasPendingOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetCardParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardParameter" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetCardParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_AckCardParameterApplied_InputMessage">
+    <wsdl:part name="parameters" element="tns:AckCardParameterApplied" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_AckCardParameterApplied_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AckCardParameterAppliedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_AckCardParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:AckCardParameter" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_AckCardParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AckCardParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_AckDownloadingCredits_InputMessage">
+    <wsdl:part name="parameters" element="tns:AckDownloadingCredits" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_AckDownloadingCredits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AckDownloadingCreditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_InitConn_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitConn" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_InitConn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitConnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_Disconnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetBlackListCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackListCode" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetBlackListCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackListCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetDownloadingCredits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownloadingCredits" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_GetDownloadingCredits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownloadingCreditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_IsManCodeValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsManCodeValid" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_IsManCodeValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsManCodeValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_CanTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_CanTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_Transfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Transfer" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_Transfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_CanCancelTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanCancelTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_CanCancelTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanCancelTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_SendDump_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendDump" />
+  </wsdl:message>
+  <wsdl:message name="IOnlineServerService_SendDump_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendDumpResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOnlineServerService">
+    <wsdl:operation name="GetLoyaltyPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/GetLoyaltyPoints" message="tns:IOnlineServerService_GetLoyaltyPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/GetLoyaltyPointsResponse" message="tns:IOnlineServerService_GetLoyaltyPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoyaltyBarCodeStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/GetLoyaltyBarCodeStatus" message="tns:IOnlineServerService_GetLoyaltyBarCodeStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/GetLoyaltyBarCodeStatusResponse" message="tns:IOnlineServerService_GetLoyaltyBarCodeStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BurnLoyaltyBarCodeBarre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/BurnLoyaltyBarCodeBarre" message="tns:IOnlineServerService_BurnLoyaltyBarCodeBarre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/BurnLoyaltyBarCodeBarreResponse" message="tns:IOnlineServerService_BurnLoyaltyBarCodeBarre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FreeLoyaltyBarCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/FreeLoyaltyBarCode" message="tns:IOnlineServerService_FreeLoyaltyBarCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/FreeLoyaltyBarCodeResponse" message="tns:IOnlineServerService_FreeLoyaltyBarCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasPendingOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/HasPendingOperation" message="tns:IOnlineServerService_HasPendingOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/HasPendingOperationResponse" message="tns:IOnlineServerService_HasPendingOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardParameter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/GetCardParameter" message="tns:IOnlineServerService_GetCardParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/GetCardParameterResponse" message="tns:IOnlineServerService_GetCardParameter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AckCardParameterApplied">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/AckCardParameterApplied" message="tns:IOnlineServerService_AckCardParameterApplied_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/AckCardParameterAppliedResponse" message="tns:IOnlineServerService_AckCardParameterApplied_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AckCardParameter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/AckCardParameter" message="tns:IOnlineServerService_AckCardParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/AckCardParameterResponse" message="tns:IOnlineServerService_AckCardParameter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AckDownloadingCredits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/AckDownloadingCredits" message="tns:IOnlineServerService_AckDownloadingCredits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/AckDownloadingCreditsResponse" message="tns:IOnlineServerService_AckDownloadingCredits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitConn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/InitConn" message="tns:IOnlineServerService_InitConn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/InitConnResponse" message="tns:IOnlineServerService_InitConn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/Disconnect" message="tns:IOnlineServerService_Disconnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/DisconnectResponse" message="tns:IOnlineServerService_Disconnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackListCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/GetBlackListCode" message="tns:IOnlineServerService_GetBlackListCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/GetBlackListCodeResponse" message="tns:IOnlineServerService_GetBlackListCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDownloadingCredits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/GetDownloadingCredits" message="tns:IOnlineServerService_GetDownloadingCredits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/GetDownloadingCreditsResponse" message="tns:IOnlineServerService_GetDownloadingCredits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsManCodeValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/IsManCodeValid" message="tns:IOnlineServerService_IsManCodeValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/IsManCodeValidResponse" message="tns:IOnlineServerService_IsManCodeValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/CanTransfer" message="tns:IOnlineServerService_CanTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/CanTransferResponse" message="tns:IOnlineServerService_CanTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/Transfer" message="tns:IOnlineServerService_Transfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/TransferResponse" message="tns:IOnlineServerService_Transfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanCancelTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/CanCancelTransfer" message="tns:IOnlineServerService_CanCancelTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/CanCancelTransferResponse" message="tns:IOnlineServerService_CanCancelTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDump">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnlineServerService/SendDump" message="tns:IOnlineServerService_SendDump_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnlineServerService/SendDumpResponse" message="tns:IOnlineServerService_SendDump_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="http_IOnlineServerService" type="tns:IOnlineServerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLoyaltyPoints">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/GetLoyaltyPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoyaltyBarCodeStatus">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/GetLoyaltyBarCodeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BurnLoyaltyBarCodeBarre">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/BurnLoyaltyBarCodeBarre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FreeLoyaltyBarCode">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/FreeLoyaltyBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasPendingOperation">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/HasPendingOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardParameter">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/GetCardParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AckCardParameterApplied">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/AckCardParameterApplied" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AckCardParameter">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/AckCardParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AckDownloadingCredits">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/AckDownloadingCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitConn">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/InitConn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/Disconnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackListCode">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/GetBlackListCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDownloadingCredits">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/GetDownloadingCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsManCodeValid">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/IsManCodeValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanTransfer">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/CanTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/Transfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanCancelTransfer">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/CanCancelTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDump">
+      <soap:operation soapAction="http://tempuri.org/IOnlineServerService/SendDump" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OnlineServerService">
+    <wsdl:port name="http_IOnlineServerService" binding="tns:http_IOnlineServerService">
+      <soap:address location="http://localhost:8080/OnlineServerService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
