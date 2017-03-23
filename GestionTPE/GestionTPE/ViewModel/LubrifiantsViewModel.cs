@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionTPE.ViewModel
 {
-    class LubrifiantsViewModel
+    public class LubrifiantsViewModel
     {
         public LubrifiantsViewModel()
         {

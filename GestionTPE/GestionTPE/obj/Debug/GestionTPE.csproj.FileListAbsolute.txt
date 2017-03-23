@@ -9,7 +9,6 @@ c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\
 c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.cache
 c:\users\b.bidjocka\documents\visual studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.lref
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe.config
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csprojResolveAssemblyReference.cache
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.pdb
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.dll

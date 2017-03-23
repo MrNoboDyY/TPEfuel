@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace GestionTPE.ViewModel
 {
-    class SoldePointCarteViewModel 
+    public class SoldePointCarteViewModel 
     {
         SoldePointCarteModel soldepointcartemodel;
 

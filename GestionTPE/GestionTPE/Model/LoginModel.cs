@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace GestionTPE.Model
 {
-    class LoginModel : INotifyPropertyChanged
+    public class LoginModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;/*gestionnaire d'evenements liés au changement 
                                                                   de la propriété */
-        private string numtpe;/*propriéte LoginModel*/
-        private string codesite;/*propriéte LoginModel*/
+        private int numtpe;/*propriéte LoginModel*/
+        private int codesite;/*propriéte LoginModel*/
 
         private bool isConnected;/* si connecté*/
-
+        private bool isDisconnected;/* si deconnecté */
 
      
         //public bool isValid()
@@ -25,7 +25,7 @@ namespace GestionTPE.Model
         //}
 
         #region Login Attributs
-        public string NumTpe /* Numero TPE à renseigner*/
+        public int NumTpe /* Numero TPE à renseigner*/
         {
             get { return numtpe; }
             set
@@ -35,7 +35,7 @@ namespace GestionTPE.Model
             }
         }
 
-        public string CodeSite /* Numero Code Site à renseigner*/
+        public int CodeSite /* Numero Code Site à renseigner*/
         {
             get { return codesite; } 
             set 
@@ -61,7 +61,20 @@ namespace GestionTPE.Model
 
         #endregion
 
-        
+        #region isDisconnected
+
+        public bool IsDisconnected
+        {
+            get { 
+                return isDisconnected; 
+            }
+            set { 
+            isDisconnected = value;
+            RaisePropertyChanged("isDisconnected");
+            }
+        }
+
+        #endregion
 
         #region RaisePropertyChanged
         private void RaisePropertyChanged(string propertyName)/*Fonction qui annonce le changement de la propriété */

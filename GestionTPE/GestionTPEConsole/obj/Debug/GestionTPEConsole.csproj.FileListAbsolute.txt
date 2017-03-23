@@ -1,0 +1,8 @@
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\bin\Debug\GestionTPEConsole.exe.config
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\bin\Debug\GestionTPEConsole.exe
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\bin\Debug\GestionTPEConsole.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\bin\Debug\GestionTPE.exe
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\bin\Debug\GestionTPE.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\obj\Debug\GestionTPEConsole.csprojResolveAssemblyReference.cache
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\obj\Debug\GestionTPEConsole.exe
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPEConsole\obj\Debug\GestionTPEConsole.pdb

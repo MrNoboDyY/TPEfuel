@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace GestionTPE.ViewModel
 {
-    class LoyaltyViewModel
+    public class LoyaltyViewModel
     {
         LoyaltyModel loyaltyModel;
 

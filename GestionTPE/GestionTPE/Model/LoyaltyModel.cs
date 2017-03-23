@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace GestionTPE.Model
 {
-    class LoyaltyModel : INotifyPropertyChanged
+    public class LoyaltyModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;/*gestionnaire d'evenements liés au changement de la propriété */
         //LoyaltyModel source = new LoyaltyModel();         

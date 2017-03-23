@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestionTPE.Model
 {
-    class SoldePointCarteModel : INotifyPropertyChanged
+    public class SoldePointCarteModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;/*gestionnaire d'evenements liés au changement*/
 

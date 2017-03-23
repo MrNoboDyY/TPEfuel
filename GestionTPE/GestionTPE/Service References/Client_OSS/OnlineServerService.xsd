@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetLoyaltyPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardLoyId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoyaltyPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLoyaltyPointsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoyaltyBarCodeStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdProduct" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pBarCodeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoyaltyBarCodeStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLoyaltyBarCodeStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BurnLoyaltyBarCodeBarre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pBarCodeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BurnLoyaltyBarCodeBarreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BurnLoyaltyBarCodeBarreResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FreeLoyaltyBarCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pBarCodeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FreeLoyaltyBarCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FreeLoyaltyBarCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasPendingOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasPendingOperationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HasPendingOperationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardParameter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardParameterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCardParameterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckCardParameterApplied">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pParameterId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckCardParameterAppliedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AckCardParameterAppliedResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckCardParameter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pParameterId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckCardParameterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AckCardParameterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckDownloadingCredits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pLstOrder" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckDownloadingCreditsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitConn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitConnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InitConnResult" nillable="true" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Disconnect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisconnectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlackListCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlackListCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBlackListCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownloadingCredits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCardNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownloadingCreditsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDownloadingCreditsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsManCodeValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pCustNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pManCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsManCodeValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsManCodeValidResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pSourceCardNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pDestCardNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pAmount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pTransacNr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pManCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CanTransferResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Transfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdPreOrder" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransferResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanCancelTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pTransacNr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pTransacNrToCancel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanCancelTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CanCancelTransferResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDump">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSite" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTpe" type="xs:int" />
+        <xs:element minOccurs="0" name="pData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDumpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendDumpResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

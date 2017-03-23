@@ -1,4 +1,5 @@
 ﻿using GestionTPE.Enum;
+using GestionTPE.Managers;
 using GestionTPE.Model;
 using GestionTPE.View;
 using System;
@@ -11,51 +12,46 @@ using System.Windows.Input;
 
 namespace GestionTPE.ViewModel
 {
-    class LoginViewModel
+    public class LoginViewModel
     {
+        uint? TpeToken;
+
+
 
         LoginModel loginmodel;/* objet loginmodel*/
 
         private bool isConnected;
 
-        
-
-
         /* A l'ouverture de l'application constructeur de l'objet vide*/
         public LoginViewModel()
         {
-            loginmodel = new LoginModel();/*instanciation de l'objet loginmodel*/
-            loginmodel.CodeSite = string.Empty;/* champ vide*/
-            loginmodel.NumTpe = string.Empty;/* champ vide*/
+            loginmodel = new LoginModel();//instanciation de l'objet loginmodel
+            loginmodel.CodeSite = 0;/* champ vide*/
+            loginmodel.NumTpe = 0;/* champ vide*/
             loginmodel.IsConnected = false;/*connection à 0,car pas de connection*/
         }
-
-
+        
         /* recuperation de l'objet loginmodel*/
         public LoginModel loginModel
         {
             get { return loginmodel; }
             set { loginmodel = value; }
         }
-
-
-
+        
         bool CanShowLoyaltyView()
         {
             return loginmodel.IsConnected;
         }
-
-
-        bool CanShowTomcardView() 
+       
+        bool CanShowTomcardView()
         {
             return loginmodel.IsConnected;
         }
 
-
-       void  ShowTomcardView()
+        void ShowTomcardView()
         {
             new TomcardView().Show();
-           
+
             new WindowControl().CloseWindow(WindowsEnum.LoginView);
         }
 
@@ -69,69 +65,73 @@ namespace GestionTPE.ViewModel
             new WindowControl().CloseWindow(WindowsEnum.LoginView);
         }
 
-        //#region IsConnected
-
-        //public bool IsConnected
-        //{ /* vérif si il y a une connection en boolean */
-        //    get
-        //    {
-        //        return isConnected;
-        //    }
-        //    set
-        //    {
-        //        isConnected = value;
-        //        RaisePropertyChanged("IsConnected");
-        //    }
-        //}
-
-        //#endregion
-
-        
         /*verifier que les deux champs sont bien rempli pour la connexion*/
         bool CanConnect()
         {
-            //if (!loginmodel.isValid())
-            //{
-             
-            //}
-            /*si CodeSite de lo'objet loginmodel Empty*/
-            if (String.IsNullOrEmpty(loginmodel.CodeSite) 
+            if (loginmodel.IsConnected)
+                return false;
+            /*si CodeSite de l'objet loginmodel Empty*/
+            if ((loginmodel.CodeSite == 0)
                 ||
                 /*si NumTpe de l'objet loginmodel Empty*/
-                String.IsNullOrEmpty(loginmodel.NumTpe))
+                (loginmodel.NumTpe == 0))
             { loginmodel.IsConnected = false; return false; }/*le bouton connect est grisé*/
             return true;
         }
 
-
-        /* se conneter avec l'objet loginmodel*/
-        private void Connection()
+        bool CanDisconnect()
         {
-
-            
-            //loginmodel.IsConnected = true;/* passer la connexion à vraie avec loginmodel validé*/
+            return loginmodel.IsConnected;
         }
 
-        /* envoi depuis le relay de la partie Loyalty/loyaltyview */
-        public ICommand LoyaltyViewCommand { get { return new ViewModelRelay(ShowLoyaltyView, CanShowLoyaltyView);}}
-               
+        /* se conneter avec l'objet loginmodel*/
+        public void Connection()
+        {
+            //consomation du webservice/ creation d'un objet "client" Webservice
+
+            var client = new Client_OSS.OnlineServerServiceClient();
+
+            TpeToken = client.InitConn(loginmodel.CodeSite, loginmodel.NumTpe);
+
+            loginModel.IsConnected = TpeToken.HasValue;
+
+            //if (!TpeToken.HasValue)
+            //{
+            //    // Gerer l'exception
+            //    loginmodel.IsConnected = false;
+            //}
+
+            // a mettre sur le click de la demande solde points
+            //Instancie le SecurityManager avec le token reçu
+            //string chaineEncryptee = SecurityManager.Instance.encrypt(TpeToken, ChaineACrypter (donnée saisie par l'utilisateur));
+            //string ChaineEnClair = SecurityManager.Instance.decrypt(TpeToken, ChaineADecrypter (reçue de OSS));
+            //client.GetLoyaltyPoints(loginmodel.CodeSite, loginmodel.NumTpe, chaineCryptee);
+
+        }
+        
+        public void Disconnect()
+        {
+            
+            var client = new Client_OSS.OnlineServerServiceClient();
+
+            if (TpeToken.HasValue)
+            {
+                client.Disconnect(loginmodel.CodeSite, loginmodel.NumTpe);
+                loginmodel.IsDisconnected = true;
+                loginModel.IsConnected = false;
+            }
+        }
+        public ICommand DisconnectCommand { get { return new ViewModelRelay(Disconnect, CanDisconnect); } }
+        /// <summary>
+        /// envoi depuis le relay de la partie Loyalty/loyaltyview
+        /// </summary>
+        public ICommand LoyaltyViewCommand { get { return new ViewModelRelay(ShowLoyaltyView, CanShowLoyaltyView); } }
+
         /* envoi depuis le relay de la connexion*/
-        public ICommand ConnectionCommand { get { return new ViewModelRelay(Connection, CanConnect);}}
+        public ICommand ConnectionCommand { get { return new ViewModelRelay(Connection, CanConnect); } }
 
         /* envoi depuis le relay de la partie Tomcard / Tomcardview*/
-        public ICommand TomcardViewCommand { get { return new ViewModelRelay(Connection, CanShowTomcardView);}}
-
-
-        //#region RaisePropertyChanged
-        //private void RaisePropertyChanged(string propertyName)/*Fonction qui annonce le changement de la propriété */
-        //{
-        //    PropertyChangedEventHandler handler = PropertyChanged;
-        //    if (handler != null)/*si l'evenement est diff de null*/
-        //    {
-        //        handler(this, new PropertyChangedEventArgs(propertyName));
-        //    }
-        //}
-        //#endregion
+        public ICommand TomcardViewCommand { get { return new ViewModelRelay(Connection, CanShowTomcardView); } }
 
     }
 }
