@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GestionTPE.Managers
 {
-    class SecurityManager
+    public class SecurityManager
     {
 
         private static volatile SecurityManager instance;
@@ -100,7 +100,7 @@ namespace GestionTPE.Managers
         }
 
         /* décryptage de la clef */
-        public byte[] decrypt(int token, string cipherText)
+        public string decrypt(int token, string cipherText)
         {
             /*placer le text à déchiffrer dans un tab byte[] d'octets */
             byte[] ciphereData = Convert.FromBase64String(cipherText);
@@ -142,7 +142,7 @@ namespace GestionTPE.Managers
             ms.Close();
             cs.Close();
 
-            return plainTextData;
+            return System.Text.Encoding.Default.GetString(plainTextData).Replace("\0",string.Empty);
 
         }
     }
