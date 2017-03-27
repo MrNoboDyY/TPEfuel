@@ -1,0 +1,5 @@
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\GestionTPEProd\GestionTPETest.dll.config
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\GestionTPEProd\GestionTPETest.dll
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\GestionTPEProd\GestionTPE.exe
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\GestionTPEProd\GestionTPETest.csprojResolveAssemblyReference.cache
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\GestionTPEProd\GestionTPETest.dll

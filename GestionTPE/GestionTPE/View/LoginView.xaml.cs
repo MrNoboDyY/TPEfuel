@@ -20,15 +20,14 @@ namespace GestionTPE.View
     public partial class LoginView : Window
     {
         /* creation de l'objet webservice*/
-      //  Client_OSS.InitConnCompletedEventHandler con = new Client_OSS.InitConnCompletedEventHandler();
-        
+        //  Client_OSS.InitConnCompletedEventHandler con = new Client_OSS.InitConnCompletedEventHandler();
+
         public LoginView()
         {
             InitializeComponent();
         }
 
-       
 
-        
     }
 }
+    

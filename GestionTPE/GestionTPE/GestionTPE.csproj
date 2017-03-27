@@ -33,6 +33,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'GestionTPETest|AnyCPU'">
+    <OutputPath>bin\GestionTPETest\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\Prod\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialDesignColors">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
@@ -42,6 +48,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
@@ -71,11 +78,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Enum\WindowsEnum.cs" />
+    <Compile Include="Managers\AppConfigManager.cs" />
     <Compile Include="Managers\SecurityManager.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\LoyaltyModel.cs" />
     <Compile Include="Model\LubrifiantsModel.cs" />
     <Compile Include="Model\SoldePointCarteModel.cs" />
+    <Compile Include="NotifyPropertyChanged.cs" />
     <Compile Include="Service References\Client_OSS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

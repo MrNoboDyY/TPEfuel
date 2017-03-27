@@ -8,11 +8,11 @@ using System.Windows.Controls;
 
 namespace GestionTPE.Model
 {
-    public class LoyaltyModel : INotifyPropertyChanged
+    public class LoyaltyModel : NotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;/*gestionnaire d'evenements liés au changement de la propriété */
+        public event PropertyChangedEventHandler PropertyChanged;
         //LoyaltyModel source = new LoyaltyModel();         
-        private bool showWindow;                   
+        //private bool showWindow;                   
         
            
         private Page pageaafficher;
@@ -21,18 +21,18 @@ namespace GestionTPE.Model
         public Page PageaAfficher
         {
             get { return pageaafficher; }
-            set { pageaafficher = value; RaisePropertyChanged("PageaAfficher"); }
+            set { SetField(ref pageaafficher, value);}
         }
 
 
-        private void RaisePropertyChanged(string propertyName)/*Fonction qui annonce le changement de la propriété */
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)/*si l'evenement est diff de null*/
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+        //private void RaisePropertyChanged(string propertyName)/*Fonction qui annonce le changement de la propriété */
+        //{
+        //    PropertyChangedEventHandler handler = PropertyChanged;
+        //    if (handler != null)/*si l'evenement est diff de null*/
+        //    {
+        //        handler(this, new PropertyChangedEventArgs(propertyName));
+        //    }
+        //}
 
        //public bool ShowWindow
        // {

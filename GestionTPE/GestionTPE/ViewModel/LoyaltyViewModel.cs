@@ -34,7 +34,6 @@ namespace GestionTPE.ViewModel
 
         void ShowSoldePointCarteView() 
         {
-            new SoldePointCarteView();
            
         }
 

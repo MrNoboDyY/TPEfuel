@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace GestionTPE.Model
 {
-    public class SoldePointCarteModel : INotifyPropertyChanged
+    public class SoldePointCarteModel : NotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;/*gestionnaire d'evenements liés au changement*/
+        public event PropertyChangedEventHandler PropertyChanged;
 
 
         private int numerdecarte;
@@ -17,23 +17,12 @@ namespace GestionTPE.Model
         public int NumeroDeCarte
         {
             get { return numerdecarte; }
-            set
-            {
-                numerdecarte = value;
-                RaisePropertyChanged("NmeroDeCarte");
-            }
+
+            set { SetField(ref numerdecarte, value); }
+
         }
 
-        #region RaisePropertyChanged
-        private void RaisePropertyChanged(string propertyName)/*Fonction qui annonce le changement de la propriété */
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)/*si l'evenement est diff de null*/
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-        #endregion
+
 
     }
 }

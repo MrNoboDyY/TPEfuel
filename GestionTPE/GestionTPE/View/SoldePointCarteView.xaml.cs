@@ -18,11 +18,12 @@ namespace GestionTPE.View
     /// <summary>
     /// Interaction logic for SoldePointCarteView.xaml
     /// </summary>
-    public partial class SoldePointCarteView : Page
+    public partial class SoldePointCarteView : Window
     {
-        public SoldePointCarteView()
+        public SoldePointCarteView(int? TpeToken)
         {
             InitializeComponent();
+            ((dynamic)this.DataContext).TpeToken = TpeToken;
         }
     }
 }
