@@ -19,9 +19,16 @@ namespace GestionTPE.View
     /// </summary>
     public partial class LoyaltyView : Window
     {
+        private int? tpeToken;
+
         public LoyaltyView()
         {
             InitializeComponent();
+        }
+
+        public LoyaltyView(int? tpeToken)
+        {
+            this.tpeToken = tpeToken;
         }
     }
 }

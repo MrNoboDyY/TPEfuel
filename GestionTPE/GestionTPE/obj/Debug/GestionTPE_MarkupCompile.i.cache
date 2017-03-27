@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\
 GestionTPE
 none
 false
 DEBUG;TRACE
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\App.xaml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\App.xaml
 6258278099
 
-30556286279
-221308592120
+30-1205213554
+22-1855505946
 UserControl1.xaml;View\LoginView.xaml;View\LoyaltyView.xaml;View\SoldePointCarteView.xaml;View\test.xaml;View\TomcardView.xaml;
 
-False
+True
 

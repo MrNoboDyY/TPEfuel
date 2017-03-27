@@ -72,16 +72,35 @@ namespace GestionTPE.ViewModel
             }
         }
 
-
-        public void RetourAccueil()
-        {
-            
-        }
-
-
-                bool CanReturnAccueil()
+        bool CanReturnAccueil()
         {
             return true;
+        }
+
+        public void RetourAccueil()
+        {   
+            //LoyaltyView loyaltyView = new LoyaltyView();
+            //loyaltyView.Hide();
+
+
+            //SoldePointCarteView soldedepointcarteview = new SoldePointCarteView(TpeToken);
+            ///new LoginView().Show();
+
+
+            //soldedepointcarteview.Hide();
+            //loyaltyView.Hide();
+
+
+
+            //foreach (Window window in Application.Current.Windows)
+
+            //{
+            //    if (!window.IsActive)
+            //    {
+            //        window.Show();
+            //    }
+            //}
+
         }
 
         public ICommand SoldePointCommand { get { return new ViewModelRelay(ShowSoldePointCarte, CanShowSoldePointCarte); } }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GestionTPE.ViewModel;
 
 namespace GestionTPE.View
 {
@@ -19,6 +20,8 @@ namespace GestionTPE.View
     /// </summary>
     public partial class LoginView : Window
     {
+        private SoldePointCarteViewModel soldePointCarteViewModel;
+
         /* creation de l'objet webservice*/
         //  Client_OSS.InitConnCompletedEventHandler con = new Client_OSS.InitConnCompletedEventHandler();
 
@@ -27,7 +30,7 @@ namespace GestionTPE.View
             InitializeComponent();
         }
 
-
+       
     }
 }
     

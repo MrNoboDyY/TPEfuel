@@ -32,22 +32,24 @@ namespace GestionTPE.ViewModel
             set { loyaltyModel = value; }
         }
 
-        void ShowSoldePointCarteView() 
-        {
+        //void ShowSoldePointCarteView() 
+        //{
            
-        }
+        //}
 
 
-        bool CanShowSoldePointCarteView() 
-        {
-            return true;
-        }
-
-       
+        //bool CanShowSoldePointCarteView() 
+        //{
+        //    return true;
+        //}
 
 
-        ICommand SoldePointCarteViewCommand { get { return new ViewModelRelay(ShowSoldePointCarteView, CanShowSoldePointCarteView); } }
-     
+        
+
+      // public ICommand SoldePointCarteViewCommand { get { return new ViewModelRelay(ShowSoldePointCarteView, CanShowSoldePointCarteView); } }
+
+        
+
 
     }
 }

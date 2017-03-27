@@ -54,20 +54,6 @@ namespace GestionTPE
             }
         }
 
-        /// <summary>
-        /// renvoyer a l'accueil
-        /// </summary>
-        [TestMethod]
-        public void RetourAccueil()
-        {
-            var client = new Client_OSS.OnlineServerServiceClient();
-
-            if (loginViewModel.TpeToken.HasValue)
-            {
-            
-            }
-        }
-
 
         [TestCleanup]
         public void Close()

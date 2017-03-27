@@ -26,17 +26,17 @@ namespace GestionTPE.ViewModel
         /* A l'ouverture de l'application constructeur de l'objet vide*/
         public LoginViewModel()
         {
-           
+
 
             loginmodel = new LoginModel();//instanciation de l'objet loginmodel
             loginmodel.CodeSite = 0;/* champ vide*/
             loginmodel.NumTpe = 0;/* champ vide*/
             loginmodel.IsConnected = false;/*connection à 0,car pas de connection*/
-             //System.Configuration.ConfigurationManager.AppSettings["URL"].ToString();
+                                           //System.Configuration.ConfigurationManager.AppSettings["URL"].ToString();
 
-             loginmodel.WebServiceAddress = new AppConfigManager().GetEndPoint();
-            
-            
+            loginmodel.WebServiceAddress = new AppConfigManager().GetEndPoint();
+
+
         }
 
 
@@ -62,10 +62,10 @@ namespace GestionTPE.ViewModel
         {
             get { return webserviceAdress; }
             set { webserviceAdress = value; }
-    
-         }
 
-        
+        }
+
+
 
         bool CanShowLoyaltyView()
         {
@@ -80,7 +80,7 @@ namespace GestionTPE.ViewModel
         //void ShowTomcardView()
         //{
         //    new TomcardView().Show();
-            
+
         //    //new WindowControl().CloseWindow(WindowsEnum.LoginView);
         //}
 
@@ -88,10 +88,11 @@ namespace GestionTPE.ViewModel
         void ShowLoyaltyView()
         {
             /* afficher loyaltyView*/
-            new SoldePointCarteView(TpeToken).Show();
+            //new SoldePointCarteView(TpeToken).Show();
+            new LoyaltyView(/*TpeToken*/).Show();
             Application.Current.MainWindow.Hide();
-            Application.Current.MainWindow.Show();
-            
+            //Application.Current.MainWindow.Show();
+
 
             /*fermer la fenetre LoginView*/
             //new WindowControl().CloseWindow(WindowsEnum.LoginView);
@@ -128,7 +129,7 @@ namespace GestionTPE.ViewModel
 
             TpeToken = (int)client.InitConn(loginmodel.CodeSite, loginmodel.NumTpe);
             loginModel.IsConnected = TpeToken.HasValue;
-            
+
 
             //if (!TpeToken.HasValue)
             //{
@@ -150,7 +151,7 @@ namespace GestionTPE.ViewModel
                 client.Disconnect(loginmodel.CodeSite, loginmodel.NumTpe);
                 loginmodel.IsDisconnected = true;
                 loginModel.IsConnected = false;
-                
+
             }
         }
 
