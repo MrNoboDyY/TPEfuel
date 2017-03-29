@@ -1,11 +1,3 @@
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.csprojResolveAssemblyReference.cache
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.dll.config
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.dll
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.pdb
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPE.exe
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPE.pdb
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.dll
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.pdb
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.dll.config
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.dll
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.pdb
@@ -16,3 +8,4 @@ G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPETest\bin\Debug\fr\Microsoft.Visua
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.csprojResolveAssemblyReference.cache
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.dll
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.csprojResolveAssemblyReference.cache

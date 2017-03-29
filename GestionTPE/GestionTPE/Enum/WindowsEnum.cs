@@ -10,6 +10,7 @@ namespace GestionTPE.Enum
     {
         LoginView,
         LoyaltyView,
-        TomcardView
+        TomcardView,
+        SoldePointCarteView,
     }
 }

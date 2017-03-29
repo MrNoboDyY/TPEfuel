@@ -1,34 +1,3 @@
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\UserControl1.baml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.baml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\test.baml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.baml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\App.baml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\UserControl1.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoginView.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\SoldePointCarteView.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\test.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\App.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.cache
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.lref
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe.config
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.pdb
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.dll
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.dll
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.pdb
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoginView.baml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\SoldePointCarteView.baml
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.g.resources
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.Properties.Resources.resources
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csproj.GenerateResource.Cache
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.pdb
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csprojResolveAssemblyReference.cache
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe.config
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.pdb
@@ -60,3 +29,27 @@ G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.g.resources
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.Properties.Resources.resources
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csproj.GenerateResource.Cache
 G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csprojResolveAssemblyReference.cache
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe.config
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.dll
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.baml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\App.baml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoginView.g.cs
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.g.cs
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.g.cs
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\App.g.cs
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.cache
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.lref
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoginView.baml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.baml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.g.resources
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.Properties.Resources.resources
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csproj.GenerateResource.Cache
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.pdb

@@ -4,50 +4,83 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace GestionTPE.Model
 {
     public class LoyaltyModel : NotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        //LoyaltyModel source = new LoyaltyModel();         
-        //private bool showWindow;                   
-        
-           
-        private Page pageaafficher;
+        private long numerodecarte;
+        private string reponseDecodee;
+        private string pointscarte;
+        private string datevaliditecarte;
+        private string statutcarte;
+        private string erreur;
+        private Visibility visibiliteinformations;
 
-
-        public Page PageaAfficher
+        public long NumeroDeCarte
         {
-            get { return pageaafficher; }
-            set { SetField(ref pageaafficher, value);}
+            get { return numerodecarte; }
+            set
+            {
+                SetField(ref numerodecarte, value);
+            }
         }
 
+        public Visibility VisibiliteInformations
+        {
+            get { return visibiliteinformations; }
+            set
+            {
+                SetField(ref visibiliteinformations, value);
+            }
+        }
 
-        //private void RaisePropertyChanged(string propertyName)/*Fonction qui annonce le changement de la propriété */
-        //{
-        //    PropertyChangedEventHandler handler = PropertyChanged;
-        //    if (handler != null)/*si l'evenement est diff de null*/
-        //    {
-        //        handler(this, new PropertyChangedEventArgs(propertyName));
-        //    }
-        //}
+        public string ReponseDecodee
+        {
+            get { return reponseDecodee; }
+            set
+            {
+                SetField(ref reponseDecodee, value);
+            }
+        }
 
-       //public bool ShowWindow
-       // {
-       //     get
-       //     {
-       //         return showWindow; 
-       //     }
-       //     set 
-       //     {
-       //         showWindow = value;
-       //         RaisePropertyChanged("ShowWindow");
-       //     }
-       // }
+        public string PointCarte
+        {
+            get { return pointscarte; }
+            set
+            {
+                SetField(ref pointscarte, value);
+            }
+        }
 
+        public string DateCarte
+        {
+            get { return datevaliditecarte; }
+            set
+            {
+                SetField(ref datevaliditecarte, value);
+            }
+        }
 
+        public string StatutCarte
+        {
+            get { return statutcarte; }
+            set
+            {
+                SetField(ref statutcarte, value);
+            }
+        }
+
+        public string Erreur
+        {
+            get { return erreur; }
+            set
+            {
+                SetField(ref erreur, value);
+            }
+        }
 
     }
 }

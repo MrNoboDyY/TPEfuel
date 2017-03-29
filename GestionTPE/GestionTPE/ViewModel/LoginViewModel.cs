@@ -1,4 +1,5 @@
-﻿using GestionTPE.Enum;
+﻿using GestionTPE.Class;
+using GestionTPE.Enum;
 using GestionTPE.Managers;
 using GestionTPE.Model;
 using GestionTPE.View;
@@ -17,29 +18,21 @@ namespace GestionTPE.ViewModel
 {
     public class LoginViewModel
     {
-        public int? TpeToken { get; set; }
 
         LoginModel loginmodel;/* objet loginmodel*/
 
-        private bool isConnected;
+        
 
         /* A l'ouverture de l'application constructeur de l'objet vide*/
         public LoginViewModel()
         {
-
-
             loginmodel = new LoginModel();//instanciation de l'objet loginmodel
             loginmodel.CodeSite = 0;/* champ vide*/
             loginmodel.NumTpe = 0;/* champ vide*/
             loginmodel.IsConnected = false;/*connection à 0,car pas de connection*/
-                                           //System.Configuration.ConfigurationManager.AppSettings["URL"].ToString();
 
             loginmodel.WebServiceAddress = new AppConfigManager().GetEndPoint();
-
-
         }
-
-
 
         public LoginViewModel(System.Windows.FrameworkElement view)
         {
@@ -62,40 +55,23 @@ namespace GestionTPE.ViewModel
         {
             get { return webserviceAdress; }
             set { webserviceAdress = value; }
-
         }
 
-
-
-        bool CanShowLoyaltyView()
-        {
-            return loginmodel.IsConnected;
-        }
 
         bool CanShowTomcardView()
         {
             return loginmodel.IsConnected;
         }
 
-        //void ShowTomcardView()
-        //{
-        //    new TomcardView().Show();
 
-        //    //new WindowControl().CloseWindow(WindowsEnum.LoginView);
-        //}
 
-        /*monter la vue LoyaltyView et fermer la fenetre LoginView*/
         void ShowLoyaltyView()
         {
-            /* afficher loyaltyView*/
-            //new SoldePointCarteView(TpeToken).Show();
-            new LoyaltyView(/*TpeToken*/).Show();
-            Application.Current.MainWindow.Hide();
-            //Application.Current.MainWindow.Show();
-
-
-            /*fermer la fenetre LoginView*/
-            //new WindowControl().CloseWindow(WindowsEnum.LoginView);
+            if (loginmodel.IsConnected)
+            {
+                new LoyaltyView().Show();
+                Application.Current.MainWindow.Hide();
+            }
         }
 
         /*verifier que les deux champs sont bien rempli pour la connexion*/
@@ -124,34 +100,26 @@ namespace GestionTPE.ViewModel
         public void Connection()
         {
             //consomation du webservice/ creation d'un objet "client" Webservice
-
             var client = new Client_OSS.OnlineServerServiceClient();
 
-            TpeToken = (int)client.InitConn(loginmodel.CodeSite, loginmodel.NumTpe);
-            loginModel.IsConnected = TpeToken.HasValue;
+            loginmodel.TpeToken = (int)client.InitConn(loginmodel.CodeSite, loginmodel.NumTpe);
+            loginModel.IsConnected = loginmodel.TpeToken.HasValue;
 
-
-            //if (!TpeToken.HasValue)
-            //{
-            //    // Gerer l'exception
-            //    loginmodel.IsConnected = false;
-            //}
-
+            User.numtpe = loginmodel.NumTpe;
+            User.tpetoken = loginmodel.TpeToken;
+            User.codesite = loginmodel.CodeSite;
         }
 
 
 
         public void Disconnect()
         {
-
             var client = new Client_OSS.OnlineServerServiceClient();
-
-            if (TpeToken.HasValue)
+            if (loginmodel.TpeToken.HasValue)
             {
                 client.Disconnect(loginmodel.CodeSite, loginmodel.NumTpe);
                 loginmodel.IsDisconnected = true;
                 loginModel.IsConnected = false;
-
             }
         }
 

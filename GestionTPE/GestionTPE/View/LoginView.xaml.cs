@@ -20,14 +20,17 @@ namespace GestionTPE.View
     /// </summary>
     public partial class LoginView : Window
     {
-        private SoldePointCarteViewModel soldePointCarteViewModel;
-
-        /* creation de l'objet webservice*/
-        //  Client_OSS.InitConnCompletedEventHandler con = new Client_OSS.InitConnCompletedEventHandler();
 
         public LoginView()
         {
             InitializeComponent();
+
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                this.DragMove();
         }
 
        

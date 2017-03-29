@@ -10,40 +10,46 @@ namespace GestionTPE.Model
 {
     public class LoginModel : NotifyPropertyChanged
     {
-        //public event PropertyChangedEventHandler PropertyChanged;/*gestionnaire d'evenements liés au changement 
-        //                                                          de la propriété */
-        private int numtpe;/*propriéte LoginModel*/
-        private int codesite;/*propriéte LoginModel*/
-
-        private bool isConnected;/* si connecté*/
-        private bool isDisconnected;/* si deconnecté */
-
+       
+        private int numtpe;
+        private int codesite;
+        private bool isConnected;
+        private bool isDisconnected;
         private string webserviceAddress;
+        private int? tpetoken;
 
-        //public bool isValid()
-        //{
-        //    return true;
-        //}
+
+
+        public int? TpeToken 
+        {
+            get
+            {
+                return tpetoken;
+            }
+            set { SetField(ref tpetoken, value); }
+        }
+
+      
         public string WebServiceAddress
         {
             get { return webserviceAddress; }
             set { SetField(ref webserviceAddress, value); }
         }
 
-        public int NumTpe /* Numero TPE à renseigner*/
+        public int NumTpe 
         {
             get { return numtpe; }
             set { SetField(ref numtpe, value); }
         }
 
-        public int CodeSite /* Numero Code Site à renseigner*/
+        public int CodeSite 
         {
             get { return codesite; }
             set { SetField(ref codesite, value); }
         }
 
         public bool IsConnected
-        { /* vérif si il y a une connection en boolean */
+        { 
             get { return isConnected; }
             set { SetField(ref isConnected, value); }
         }
