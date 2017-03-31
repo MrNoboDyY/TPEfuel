@@ -4,6 +4,7 @@ using GestionTPE.ViewModel;
 using GestionTPE.Model;
 using GestionTPE.Managers;
 using GestionTPE.View;
+using GestionTPE.Class;
 
 namespace GestionTPE
 {
@@ -32,42 +33,80 @@ namespace GestionTPE
         public void EncrypterCarte()
         {
 
-            if (loginViewModel.TpeToken.HasValue)
+            if (User.tpetoken.HasValue)
             {  
                 string reponseDecodee;//= string.Empty;
                 string reponseCryptee;
-                string donneeCryptee = SecurityManager.Instance.encrypt((int)loginViewModel.TpeToken.Value, "1404242000044271626");
+                string donneeCryptee = SecurityManager.Instance.encrypt((int)User.tpetoken.Value, "1404242000044271626");
 
                 
 
                 var client = new Client_OSS.OnlineServerServiceClient();
-            
-                if (loginViewModel.TpeToken.HasValue)
+
+                if (User.tpetoken.HasValue)
                 {
                     reponseCryptee = client.GetLoyaltyPoints(2033, 82, donneeCryptee);
                     if (reponseCryptee != string.Empty)
                     {
-                       reponseDecodee  = SecurityManager.Instance.decrypt((int)loginViewModel.TpeToken.Value, reponseCryptee);
+                        reponseDecodee = SecurityManager.Instance.decrypt((int)User.tpetoken.Value, reponseCryptee);
                                                                                              
                     }                  
                 }                
             }
         }
 
-
-        [TestCleanup]
-        public void Close()
+        [TestMethod]
+        public void StatutCodeBarre()
         {
-            System.Threading.Thread.Sleep(1000);
-            if (loginViewModel.loginModel.IsConnected)
-                loginViewModel.Disconnect();
+            if (User.tpetoken.HasValue)
+            {
+                string codeproduit = "94" ;
+                string idproduit ="2L03258369" ;
 
-            Assert.IsTrue(loginViewModel.loginModel.IsDisconnected);
-            Assert.IsFalse(loginViewModel.loginModel.IsConnected);
+                string codebarreCryp = string.Empty;
+                string codebarreRepCryp;
+                string codeEnvoye = string.Empty;
+
+
+            var client = new Client_OSS.OnlineServerServiceClient();
+            {
+                if (User.tpetoken.HasValue)
+
+                codebarreCryp = SecurityManager.Instance.encrypt((int)User.tpetoken, codeEnvoye.ToString());
+                codebarreRepCryp = client.GetLoyaltyBarCodeStatus(User.codesite, User.numtpe, "2L03258369", "94");
+            }
+          //  using (var client = new Client_OSS.OnlineServerServiceClient())
+           // {
+        //        if (User.tpetoken.HasValue)
+        //        {
+        //            codebarreRepCryp = client.GetLoyaltyBarCodeStatus(User.codesite, User.numtpe, loyaltymodel.Idproduit, loyaltymodel.Codeproduit);
+        //            string retourdecode = codebarreRepCryp;
+        //            Match match = Regex.Match(retourdecode, "^KO[1-99]{1,2}$");
+        //            if (!match.Success)
+        //            {
+        //                loyaltymodel.VisibiliteInformations = Visibility.Visible;
+        //                loyaltymodel.VisibiliteErreur = Visibility.Hidden;
+        //            }
+
+                }
+            }
+        
         }
 
+
+        //[TestCleanup]
+        //public void Close()
+        //{
+        //    System.Threading.Thread.Sleep(1000);
+        //    if (loginViewModel.loginModel.IsConnected)
+        //        loginViewModel.Disconnect();
+
+        //    Assert.IsTrue(loginViewModel.loginModel.IsDisconnected);
+        //    Assert.IsFalse(loginViewModel.loginModel.IsConnected);
+        //}
+
     }
-}
+//}
 //reponseDecodee = SecurityManager.Instance.decrypt()
 
 //reponseDecodee = System.Text.Encoding.ASCII.GetString(pointsurlacarte);

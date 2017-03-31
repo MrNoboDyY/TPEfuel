@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace GestionTPE.Class
 {
-    public static class User
+   class LeCodeProduit
     {
-        public static int? tpetoken;
-        public static int numtpe;
-        public static int codesite;
-    }   
+        //public string idproduit;
+        //public string codeproduit;
+        //public string lecodeproduit;
+    }
 }
-
-
-    

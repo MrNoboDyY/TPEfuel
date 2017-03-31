@@ -77,10 +77,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Class\LeCodeProduit.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Enum\ErrorMessages.cs" />
     <Compile Include="Enum\WindowsEnum.cs" />
     <Compile Include="Managers\AppConfigManager.cs" />
-    <Compile Include="Managers\GestionReponse.cs" />
+    <Compile Include="Managers\RegexValidation.cs" />
     <Compile Include="Managers\SecurityManager.cs" />
     <Compile Include="Managers\WindowsManager.cs" />
     <Compile Include="Model\LoginModel.cs" />
