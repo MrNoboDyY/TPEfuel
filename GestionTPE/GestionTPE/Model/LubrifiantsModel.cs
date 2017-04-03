@@ -19,7 +19,7 @@ namespace GestionTPE.Model
 
         private string pointproduit;
 
-        private string validationcode;
+        private string validationcode ;
 
         private Visibility visibiliteinformations;
         private Visibility visibiliteErreur;

@@ -37,6 +37,7 @@ C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.pdb
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csprojResolveAssemblyReference.cache
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.baml
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\App.baml
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\View\LoginView.g.cs

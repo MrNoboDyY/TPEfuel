@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DataObject.cs" />
     <Compile Include="TestEtapesGestionTPE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

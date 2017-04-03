@@ -101,7 +101,7 @@ namespace GestionTPE.Model
             private string codeproduit;
 
             private string idproduit;
-            private string lecodeproduit;
+            private string infosproduits;
             
             [RegularExpression("^KO[1-9]{1,2}$", ErrorMessage = "ERREUR")]
             private string statutcode;
@@ -111,15 +111,15 @@ namespace GestionTPE.Model
             private string validationcode;
 
 
-            public string Lecodeproduit 
+            public string InfosProduit 
             { 
                 get 
                 { 
-                    return lecodeproduit;
+                    return infosproduits;
                 }
                 set 
                 { 
-                    SetField(ref lecodeproduit,value); 
+                    SetField(ref infosproduits,value); 
                 }
             }
             
@@ -183,7 +183,7 @@ namespace GestionTPE.Model
                 }
                 set
                 {
-                    SetField(ref statutcode, value);
+                    SetField(ref validationcode, value);
                 }
             }
 
