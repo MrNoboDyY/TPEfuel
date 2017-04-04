@@ -5,80 +5,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="GestionTPE.View.LoyaltyView"
         Title="LoyaltyView" Height="366" Width="610" ResizeMode="NoResize">
     <Window.DataContext>
-        <viewModel:LoyaltyViewModel/>
+        <viewModel:LoyaltyViewModel />
     </Window.DataContext>
     <TabControl HorizontalAlignment="Left" Height="338" VerticalAlignment="Top" Width="605">
         <TabItem Header="SOLDE POINT">
-            <Grid Background="White" Margin="0,-7,-7,-1" Height="314" VerticalAlignment="Top" HorizontalAlignment="Left" Width="602" d:IsHidden="True">
+            <Grid Background="White" Margin="0,-7,-7,-1" Height="314" VerticalAlignment="Top" HorizontalAlignment="Left" Width="602">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="25*" />
                 </Grid.ColumnDefinitions>
-                <Grid HorizontalAlignment="Left" Height="auto" Margin="20,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                <Grid HorizontalAlignment="Left" Height="auto" Margin="20,10,0,0" VerticalAlignment="Top" Width="auto" />
                 <Label x:Name="numerodecarteLabel" Content="NumCarte * :" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="1" />
-                <TextBox Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="1" TextWrapping="Wrap" Text="{Binding LoyaltyModel.NumeroDeCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" Background="LightBlue"/>
-                <Label x:Name="historiquepointLabel" Content="HistoriquePoints" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="2" VerticalAlignment="Top"/>
+                <TextBox Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="1" TextWrapping="Wrap" Text="{Binding LoyaltyModel.NumeroDeCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" Background="LightBlue" />
+                <Label x:Name="historiquepointLabel" Content="HistoriquePoints" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="2" VerticalAlignment="Top" />
                 <TextBox IsEnabled="False" Background="LightBlue" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.ColumnSpan="2" Grid.Row="2" TextWrapping="Wrap" Text="{Binding LoyaltyModel.ReponseDecodee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" />
-                <Button Command="{Binding SoldePointCommand}" Content="Valider" Grid.Column="3" Margin="19,10,21,10" Grid.Row="1" VerticalAlignment="Stretch" Height="Auto" Background="Green"/>
-                <Button Command="{Binding RetourAccueilCommand}" Content="Retour Accueil" Grid.Column="3" Margin="19,112,21,-85" Grid.Row="3" Grid.ColumnSpan="1" RenderTransformOrigin="0.419,4.188" Height="Auto" FontSize="10" FontWeight="Bold"/>
+                <Button Command="{Binding SoldePointCommand}" Content="Valider" Grid.Column="3" Margin="19,10,21,10" Grid.Row="1" VerticalAlignment="Stretch" Height="Auto" Background="Green" />
+                <Button Command="{Binding RetourAccueilCommand}" Content="Retour Accueil" Grid.Column="3" Margin="19,112,21,-85" Grid.Row="3" Grid.ColumnSpan="1" RenderTransformOrigin="0.419,4.188" Height="Auto" FontSize="10" FontWeight="Bold" />
                 <Grid Visibility="{Binding LoyaltyModel.VisibiliteInformations}" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="156" Margin="10,5,0,-110" Grid.Row="3" VerticalAlignment="Top" Width="334">
-                    <Label  Content="Solde Points" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="121"/>
-                    <Label  Content="Au" HorizontalAlignment="Right" Height="35" Margin="0,61,214,0" VerticalAlignment="Top" Width="121"/>
-                    <Label Content="Statut" HorizontalAlignment="Left" Height="24" Margin="10,112,0,0" VerticalAlignment="Top" Width="121"/>
-                    <TextBox IsEnabled="False" Name="txtPointCarte" HorizontalAlignment="Left" Height="26" Margin="160,10,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.PointCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="126"/>
-                    <TextBox IsEnabled="False" Name="txtReponseDecodee" HorizontalAlignment="Left" Height="44" Margin="160,51,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.DateCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="126"/>
-                    <TextBox IsEnabled="False" HorizontalAlignment="Left" Height="36" Margin="160,100,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.StatutCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="126"/>
+                    <Label  Content="Solde Points" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="121" />
+                    <Label  Content="Au" HorizontalAlignment="Right" Height="35" Margin="0,61,214,0" VerticalAlignment="Top" Width="121" />
+                    <Label Content="Statut" HorizontalAlignment="Left" Height="24" Margin="10,112,0,0" VerticalAlignment="Top" Width="121" />
+                    <TextBox IsEnabled="False" Name="txtPointCarte" HorizontalAlignment="Left" Height="26" Margin="160,10,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.PointCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="126" />
+                    <TextBox IsEnabled="False" Name="txtReponseDecodee" HorizontalAlignment="Left" Height="44" Margin="160,51,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.DateCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="126" />
+                    <TextBox IsEnabled="False" HorizontalAlignment="Left" Height="36" Margin="160,100,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.StatutCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="126" />
                 </Grid>
-                <Grid Grid.Column="3"  HorizontalAlignment="Left" Height="31" Margin="19,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="111"/>
+                <Grid Grid.Column="3"  HorizontalAlignment="Left" Height="31" Margin="19,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="111" />
                 <Label Content="ERREUR" Visibility="{Binding LoyaltyModel.VisibiliteErreur}" Height="31" Margin="31,10,21,0" Foreground="#FFFF1100" FontSize="14" FontFamily="Antique Olive Compact" VerticalAlignment="Top" Grid.Column="3" Grid.Row="2" />
                 <Grid Visibility="{Binding LoyaltyModel.VisibiliteErreur}" Grid.Column="3" HorizontalAlignment="Left" Height="87" Margin="19,10,0,-46" Grid.Row="3" VerticalAlignment="Top" Width="111">
-                    <TextBox x:Name="MessageErreur" Height="87" Margin="470,163,-470,-163" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                    <TextBox x:Name="MessageErreur" Height="87" Margin="470,163,-470,-163" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
                 </Grid>
             </Grid>
         </TabItem>
-        <TabItem Header="LUBRIFIANTS">
-            <Grid Background="White" >
-                <Grid HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto"/>
-                <Button Content="Validation" Height="Auto" Margin="483,180,7,100" Background="Green" RenderTransformOrigin="0.461,-0.741"/>
-                <Button Content="Annulation" Height="Auto" Margin="483,230,7,50" RenderTransformOrigin="0.539,1.625" Background="Red"/>
-                <Button Content="Retour Accueil" Height="Auto" Margin="400,275,7,7"/>
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" BorderBrush="Blue"  HorizontalAlignment="Left" Height="255" Margin="10,15,0,0" VerticalAlignment="Top" Width="468" BorderThickness="5">
-                    <Grid Name="Lubrifiants" Height="250" Width="468">
-                        <Grid.RowDefinitions>
-                            
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            
-                        </Grid.ColumnDefinitions>
-                        <ListView Grid.ColumnSpan="7" Grid.RowSpan="9" Margin="1,1,0.571,1" Background="{x:Null}" BorderThickness="6,6,6,7" Foreground="{x:Null}">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="PRODUIT" Width="auto" DisplayMemberBinding="{Binding [PRODUIT]}" />
-                                    <GridViewColumn Header="CODEPRODUIT" Width="auto" DisplayMemberBinding="{Binding [CODEPRODUIT]}"/>
-                                    <GridViewColumn Header="VOLUME" Width="auto" DisplayMemberBinding="{Binding [VOLUME]}"/>
-                                    <GridViewColumn Header="IDBIDON" Width="auto" DisplayMemberBinding="{Binding [IDBIDON]}"/>                                    
-                                    <GridViewColumn Header="AJOUT" Width="auto" DisplayMemberBinding="{Binding [AJOUT]}"/>
-                                    <GridViewColumn Header="STATUTCODE" Width="auto" DisplayMemberBinding="{Binding [STATUTCODE]}"/>
-                                    <GridViewColumn Header="REPONSESTATUT" Width="auto" DisplayMemberBinding="{Binding [REPONSESTATUT]}"/>
-                                    <GridViewColumn/>
-                                    
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </Grid>
-                </ScrollViewer>
-
-
+        <TabItem Header="PRODUITS">
+            <Grid Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="114*" />
+                </Grid.ColumnDefinitions>
+                <Grid HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto" />
+                <Button Command="{Binding BrulerCodeProduitCommand}" Content="Validation" Height="Auto" Margin="458,170,7,105" Background="Green" RenderTransformOrigin="0.461,-0.741" Grid.Column="1" />
+                <Button Content="Annulation" Height="Auto" Margin="458,220,7,55" RenderTransformOrigin="0.539,1.625" Background="Red" Grid.Column="1" />
+                <Button Content="Retour Accueil" Height="Auto" Margin="375,265,7,9" Grid.Column="1" />
+                <Label Content="codproduit" HorizontalAlignment="Left" Height="26" Margin="10,26,0,0" VerticalAlignment="Top" Width="78" Grid.ColumnSpan="2" />
+                <TextBox HorizontalAlignment="Left" Height="38" Text="{Binding LoyaltyModel.Codeproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.54,0.478" Grid.ColumnSpan="2" />
+                <TextBox HorizontalAlignment="Left" Height="38" Text="{Binding LoyaltyModel.Codebarre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="75,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" RenderTransformOrigin="1.71,0.391" Grid.Column="1" />
+                <Button Content="ajouter" Command="{Binding CodebarreStatusCommand}" HorizontalAlignment="Left" Height="38" Margin="170,68,0,0" VerticalAlignment="Top" Width="83" Grid.Column="1" />
+                <TextBox HorizontalAlignment="Left" IsEnabled="False" Text="{Binding LoyaltyModel.Pointproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="38" Margin="270,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Grid.Column="1" />
+                <Label Content="points" HorizontalAlignment="Left" Height="26" Margin="270,26,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="1.459,0.346" Grid.Column="1" />
+                <Label Content="codebarre" HorizontalAlignment="Left" Height="26" Margin="75,26,0,0" VerticalAlignment="Top" Width="90" Grid.Column="1" />
+                <Label Content="statut" HorizontalAlignment="Left" Height="26" Margin="355,26,0,0" VerticalAlignment="Top" Width="96" Grid.Column="1" />
+                <TextBox  IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="355,68,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.VisibiliteBurned}" VerticalAlignment="Top" Width="96" />
             </Grid>
-
         </TabItem>
     </TabControl>
 </Window>

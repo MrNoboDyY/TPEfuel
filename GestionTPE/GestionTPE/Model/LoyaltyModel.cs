@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionTPE.Managers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -15,10 +16,12 @@ namespace GestionTPE.Model
         /// <summary>
         /// Ce Modele gère Table SoldePoints + Table Lubrifiants
         /// </summary>
+
         #region Soldepoints
+
         private long numerodecarte;
 
-        [RegularExpression("^KO[1-9]{1,2}$", ErrorMessage = "ERREUR")]
+        [ManageRegEx("regexReponseDecodee", ErrorMessage = "ERREUR")]
         private string reponseDecodee;
 
         private string pointscarte;
@@ -26,8 +29,6 @@ namespace GestionTPE.Model
         private string datevaliditecarte;
 
         private string statutcarte;
-
-
 
         private Visibility visibiliteinformations;
         private Visibility visibiliteErreur;
@@ -94,101 +95,138 @@ namespace GestionTPE.Model
                 SetField(ref visibiliteErreur, value);
             }
         }
-        #endregion
 
-        #region Lubrifiants
-        
-            private string codeproduit;
+        #endregion Soldepoints
 
-            private string idproduit;
-            private string infosproduits;
-            
-            [RegularExpression("^KO[1-9]{1,2}$", ErrorMessage = "ERREUR")]
-            private string statutcode;
+        #region Produits
 
-            private string pointproduit;
+        [ManageRegEx("regexCodeProduit", ErrorMessage = "Mauvaise saisie du Code Produit")]
+        private string codeproduit;
 
-            private string validationcode;
+        [ManageRegEx("regexCodeBarre", ErrorMessage = "Mauvaise saisie de Code Barre")]
+        private string codebarre;
 
+        private string infosproduits;
 
-            public string InfosProduit 
-            { 
-                get 
-                { 
-                    return infosproduits;
-                }
-                set 
-                { 
-                    SetField(ref infosproduits,value); 
-                }
-            }
-            
+        [ManageRegEx("regexStatutCodeBarre", ErrorMessage = "ERREUR")]
+        private string statutcode;
 
-            public string Codeproduit
+        private string pointproduit;
+
+        private string validationcode;
+
+        private Visibility visibiliteLocked;
+        private Visibility visibiliteBurned;
+        private Visibility visibiliteFree;
+
+        public Visibility VisibiliteLocked
+        {
+            get
             {
-                get
-                {
-                    return codeproduit;
-                }
-                set
-                {
-                    SetField(ref codeproduit, value);
-                }
+                return visibiliteLocked;
             }
-
-
-            public string Idproduit
+            set
             {
-                get
-                {
-                    return idproduit;
-                }
-                set
-                {
-                    SetField(ref idproduit, value);
-                }
+                SetField(ref visibiliteLocked, value);
             }
-
-            public string Statutcode
-            {
-                get
-                {
-                    return statutcode;
-                }
-                set
-                {
-                    SetField(ref statutcode, value);
-                }
-            }
-
-
-            public string Pointproduit
-            {
-                get
-                {
-                    return pointproduit;
-                }
-                set
-                {
-                    SetField(ref pointproduit, value);
-                }
-            }
-
-
-            public string Validationcode
-            {
-                get
-                {
-                    return validationcode;
-                }
-                set
-                {
-                    SetField(ref validationcode, value);
-                }
-            }
-
-           
-        #endregion
         }
-    }
 
+        public Visibility VisibiliteBurned
+        {
+            get
+            {
+                return visibiliteBurned;
+            }
+            set
+            {
+                SetField(ref visibiliteBurned, value);
+            }
+        }
+
+        public Visibility VisibiliteFree
+        {
+            get
+            {
+                return visibiliteFree;
+            }
+            set
+            {
+                SetField(ref visibiliteFree, value);
+            }
+        }
+
+        public string InfosProduit
+        {
+            get
+            {
+                return infosproduits;
+            }
+            set
+            {
+                SetField(ref infosproduits, value);
+            }
+        }
+
+        public string Codeproduit
+        {
+            get
+            {
+                return codeproduit;
+            }
+            set
+            {
+                SetField(ref codeproduit, value);
+            }
+        }
+
+        public string Codebarre
+        {
+            get
+            {
+                return codebarre;
+            }
+            set
+            {
+                SetField(ref codebarre, value);
+            }
+        }
+
+        public string Statutcode
+        {
+            get
+            {
+                return statutcode;
+            }
+            set
+            {
+                SetField(ref statutcode, value);
+            }
+        }
+
+        public string Pointproduit
+        {
+            get
+            {
+                return pointproduit;
+            }
+            set
+            {
+                SetField(ref pointproduit, value);
+            }
+        }
+
+        public string Validationcode
+        {
+            get
+            {
+                return validationcode;
+            }
+            set
+            {
+                SetField(ref validationcode, value);
+            }
+        }
+
+        #endregion Produits
+    }
+}

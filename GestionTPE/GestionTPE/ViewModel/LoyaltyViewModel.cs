@@ -19,14 +19,19 @@ namespace GestionTPE.ViewModel
     public class LoyaltyViewModel : ValidationRule
     {
         private LoyaltyModel loyaltymodel;
+        private string codeproduitCrypt = string.Empty;
+        //private Client_OSS.OnlineServerServiceClient client = new Client_OSS.OnlineServerServiceClient();
 
         public LoyaltyViewModel()
         {
             loyaltymodel = new LoyaltyModel();
             loyaltymodel.Codeproduit = string.Empty;
-            loyaltymodel.Idproduit = string.Empty;
+            loyaltymodel.Codebarre = string.Empty;
             loyaltymodel.VisibiliteInformations = Visibility.Hidden;
             loyaltymodel.VisibiliteErreur = Visibility.Hidden;
+            loyaltymodel.VisibiliteLocked = Visibility.Hidden;
+            loyaltymodel.VisibiliteBurned = Visibility.Hidden;
+            loyaltymodel.VisibiliteFree = Visibility.Hidden;
         }
 
         public LoyaltyModel LoyaltyModel
@@ -55,10 +60,7 @@ namespace GestionTPE.ViewModel
 
             if (User.tpetoken.HasValue)
             {
-                //donneeCryptee = SecurityManager.Instance.encrypt((int)TpeToken, "1404242000044271626");
-
                 donneeCryptee = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.NumeroDeCarte.ToString());
-                // string test = loyaltymodel.ReponseDecodee;
             }
             //renvoi au webservice qui gere le calcul des points sur la carte ...
             using (var client = new Client_OSS.OnlineServerServiceClient())
@@ -119,20 +121,29 @@ namespace GestionTPE.ViewModel
             return true;
         }
 
+        public void BrulerCodeBarre()
+        {
+            using (var client = new Client_OSS.OnlineServerServiceClient())
+                if (User.tpetoken.HasValue)
+                {
+                    loyaltymodel.Validationcode = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codeproduitCrypt);
+                    loyaltymodel.VisibiliteBurned = Visibility.Visible;
+                    loyaltymodel.VisibiliteFree = Visibility.Hidden;
+                    loyaltymodel.VisibiliteLocked = Visibility.Hidden;
+                }
+        }
+
         public void ShowCodebarreStatus()
         {
             string codeproduit = loyaltymodel.Codeproduit;
-            string idproduit = loyaltymodel.Idproduit;
-            string idproduitCryp = string.Empty;
-            string codeproduitCrypt = string.Empty;
-
-            string codebarreCryp = string.Empty;
-            string codebarreCrypRep;
+            string codebarre = loyaltymodel.Codebarre;
+            string codebarreCrypt = string.Empty;
+            string codebarreCrypRep = string.Empty;
 
             if (User.tpetoken.HasValue)
             {
-                idproduitCryp = SecurityManager.Instance.encrypt((int)User.tpetoken, idproduit.ToString());
                 codeproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codeproduit.ToString());
+                codebarreCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codebarre.ToString());
             }
             using (var client = new Client_OSS.OnlineServerServiceClient())
             {
@@ -141,20 +152,23 @@ namespace GestionTPE.ViewModel
                     User.tpetoken.HasValue
                     )
                 {
-                    codebarreCrypRep = client.GetLoyaltyBarCodeStatus(User.codesite, User.numtpe, idproduitCryp, codeproduitCrypt);
+                    codebarreCrypRep = client.GetLoyaltyBarCodeStatus(User.codesite, User.numtpe, codeproduitCrypt, codebarreCrypt);
 
-                    string doneeProduit = SecurityManager.Instance.decrypt((int)User.tpetoken, codebarreCrypRep);
+                    loyaltymodel.Pointproduit = SecurityManager.Instance.decrypt((int)User.tpetoken, codebarreCrypRep);
+
+                    string pprod = loyaltymodel.Pointproduit;
 
                     Match match = Regex.Match(
-                        doneeProduit, "^KO[1-99]{1,2}$");
+                        pprod, "^KO[1-99]{1,2}$");
                     if
                         (!match.Success)
                     {
-                        loyaltymodel.VisibiliteInformations = Visibility.Visible;
-                        loyaltymodel.VisibiliteErreur = Visibility.Hidden;
+                        loyaltymodel.VisibiliteLocked = Visibility.Visible;
+                        loyaltymodel.VisibiliteBurned = Visibility.Hidden;
+                        loyaltymodel.VisibiliteFree = Visibility.Hidden;
 
-                        string codeproduitbrule = string.Empty;
-                        codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codeproduitCrypt);
+                        //loyaltymodel.VisibiliteInformations = Visibility.Visible;
+                        //loyaltymodel.VisibiliteErreur = Visibility.Hidden;
                     }
                 }
             }
@@ -191,7 +205,7 @@ namespace GestionTPE.ViewModel
             }
         }
 
-        public ICommand ShowCodebarreStatusCommand
+        public ICommand CodebarreStatusCommand
         {
             get
             {
@@ -199,7 +213,13 @@ namespace GestionTPE.ViewModel
             }
         }
 
-        //public ICommand BrulerCodeProduitCommand(BrulerCodeBarre);
+        public ICommand BrulerCodeProduitCommand
+        {
+            get
+            {
+                return new ViewModelRelay(BrulerCodeBarre);
+            }
+        }
 
         //public ICommand LibererCodeProduitCommand(LibererCodeProduit);
 

@@ -80,15 +80,16 @@
     </Compile>
     <Compile Include="Class\Produit.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Enum\EnumStatusCodeProduit.cs" />
     <Compile Include="Enum\ErrorMessages.cs" />
     <Compile Include="Enum\WindowsEnum.cs" />
     <Compile Include="Managers\AppConfigManager.cs" />
+    <Compile Include="Managers\ManageRegEx.cs" />
     <Compile Include="Managers\RegexValidation.cs" />
     <Compile Include="Managers\SecurityManager.cs" />
     <Compile Include="Managers\WindowsManager.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\LoyaltyModel.cs" />
-    <Compile Include="Model\LubrifiantsModel.cs" />
     <Compile Include="Model\NotifyPropertyChanged.cs" />
     <Compile Include="Service References\Client_OSS\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -98,7 +99,6 @@
     <Compile Include="Test\RijndaelTest.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\LoyaltyViewModel.cs" />
-    <Compile Include="ViewModel\LubrifiantsViewModel.cs" />
     <Compile Include="ViewModel\ViewModelRelay.cs" />
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>

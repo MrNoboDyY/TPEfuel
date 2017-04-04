@@ -60,25 +60,25 @@ namespace GestionTPE
         {
             if (User.tpetoken.HasValue)
             {
-                string idproduit = "80";
-                string codeproduit = "2L01258260";
+                string codeproduit = "81";
+                string codebarreproduit = "2L01357460";
 
-                string idproduitCryp = string.Empty;
-                string codeproduitCrypt = string.Empty;
+                string codeproduitCryp = string.Empty;
+                string codebarreproduitCrypt = string.Empty;
 
                 string infoprodAcrypterRep;
 
                 if (User.tpetoken.HasValue)
                 {
-                    idproduitCryp = SecurityManager.Instance.encrypt((int)User.tpetoken, idproduit.ToString());
-                    codeproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codeproduit.ToString());
+                    codeproduitCryp = SecurityManager.Instance.encrypt((int)User.tpetoken, codeproduit.ToString());
+                    codebarreproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codebarreproduit.ToString());
                 }
 
                 var client = new Client_OSS.OnlineServerServiceClient();
                 if (User.tpetoken.HasValue)
                 {
-                    infoprodAcrypterRep = client.GetLoyaltyBarCodeStatus(User.codesite, User.numtpe, idproduitCryp, codeproduitCrypt);
-                    string resultat = SecurityManager.Instance.decrypt((int)User.tpetoken, infoprodAcrypterRep);
+                    infoprodAcrypterRep = client.GetLoyaltyBarCodeStatus(User.codesite, User.numtpe, codeproduitCryp, codebarreproduitCrypt);
+                    string ptsproduit = SecurityManager.Instance.decrypt((int)User.tpetoken, infoprodAcrypterRep);
 
                     Match match = Regex.Match(
                     infoprodAcrypterRep, "^KO[1-99]{1,2}$");
@@ -86,7 +86,7 @@ namespace GestionTPE
                     if (!match.Success)
                     {
                         string codeproduitbrule = string.Empty;
-                        codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codeproduitCrypt);
+                        codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreproduitCrypt);
                     }
                 }
             }
