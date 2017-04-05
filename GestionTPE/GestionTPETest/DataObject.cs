@@ -10,18 +10,6 @@ namespace GestionTPE
         private string idproduit;
         private string codeproduit;
 
-        //public DataObject dataobject
-        //{  
-        //    get 
-        //    { 
-        //    return dataobject; 
-        //    }
-        //    set 
-        //    { 
-        //        dataobject = value; 
-        //    }
-        //}
-
 
         public string Idproduit
         {

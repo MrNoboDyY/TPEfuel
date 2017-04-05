@@ -15,6 +15,7 @@ namespace GestionTPE
         private LoginViewModel loginViewModel;
 
         private LoyaltyModel loyaltymodel;
+        private string codebarreproduitCrypt = string.Empty;
 
         /// <summary>
         /// test à effectuer en debut de test
@@ -64,7 +65,6 @@ namespace GestionTPE
                 string codebarreproduit = "2L01357460";
 
                 string codeproduitCryp = string.Empty;
-                string codebarreproduitCrypt = string.Empty;
 
                 string infoprodAcrypterRep;
 
@@ -101,8 +101,7 @@ namespace GestionTPE
                 string codeproduitbrule = string.Empty;
 
                 var client = new Client_OSS.OnlineServerServiceClient();
-
-                //codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codeproduitCrypt);
+                codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreproduitCrypt);
             }
         }
     }
