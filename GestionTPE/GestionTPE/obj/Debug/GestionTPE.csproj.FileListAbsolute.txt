@@ -53,4 +53,3 @@ C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csproj.GenerateResource.Cache
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.pdb
-C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csprojResolveAssemblyReference.cache

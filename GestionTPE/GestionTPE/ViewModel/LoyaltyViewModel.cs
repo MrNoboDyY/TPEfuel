@@ -13,25 +13,22 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Data;
+using GestionTPE.Common;
 
 namespace GestionTPE.ViewModel
 {
     public class LoyaltyViewModel : ValidationRule
     {
         private LoyaltyModel loyaltymodel;
-        private string codeproduitCrypt = string.Empty;
-        //private Client_OSS.OnlineServerServiceClient client = new Client_OSS.OnlineServerServiceClient();
 
         public LoyaltyViewModel()
         {
             loyaltymodel = new LoyaltyModel();
             loyaltymodel.Codeproduit = string.Empty;
             loyaltymodel.Codebarre = string.Empty;
+
             loyaltymodel.VisibiliteInformations = Visibility.Hidden;
             loyaltymodel.VisibiliteErreur = Visibility.Hidden;
-            loyaltymodel.VisibiliteLocked = Visibility.Hidden;
-            loyaltymodel.VisibiliteBurned = Visibility.Hidden;
-            loyaltymodel.VisibiliteFree = Visibility.Hidden;
         }
 
         public LoyaltyModel LoyaltyModel
@@ -40,11 +37,11 @@ namespace GestionTPE.ViewModel
             set { loyaltymodel = value; }
         }
 
-        //public LubrifiantsModel lubrifiantModel
-        //{
-        //    get { return lubrifiantmodel; }
-        //    set { lubrifiantmodel = value; }
-        //}
+        private bool VerificationsOk(string OSS_Reponse)
+        {
+            Match match = Regex.Match(OSS_Reponse, "^KO[1-99]{1,2}$");
+            return !match.Success;
+        }
 
         #region SoldepPoints Carte
 
@@ -68,22 +65,12 @@ namespace GestionTPE.ViewModel
                 if (User.tpetoken.HasValue)
                 {
                     reponseCryptee = client.GetLoyaltyPoints(User.codesite, User.numtpe, donneeCryptee);
-                    if
-                        (
-                        reponseCryptee != string.Empty
-                        )
+                    if (reponseCryptee != string.Empty)
                     {
                         //str = SecurityManager.Instance.decrypt((int)User.tpetoken, reponseCryptee);
                         loyaltymodel.ReponseDecodee = SecurityManager.Instance.decrypt((int)User.tpetoken, reponseCryptee);
 
-                        //if (!loyaltymodel.ReponseDecodee.StartsWith("K"))
-                        string str = loyaltymodel.ReponseDecodee;
-                        Match match = Regex.Match(str, "^KO[1-99]{1,2}$");
-
-                        if
-                            (
-                            !match.Success
-                            )
+                        if (VerificationsOk(loyaltymodel.ReponseDecodee))
                         {
                             /*Recuperation de la reponse splité en indices / sans les # */
                             string[] Rep = loyaltymodel.ReponseDecodee.Split(new char[] { '#' }, StringSplitOptions.None);
@@ -99,12 +86,6 @@ namespace GestionTPE.ViewModel
                         else
                         {
                             loyaltymodel.VisibiliteInformations = Visibility.Hidden;
-                        }
-
-                        loyaltymodel.VisibiliteErreur = Visibility.Hidden;
-
-                        if (match.Success)
-                        {
                             loyaltymodel.VisibiliteErreur = Visibility.Visible;
                         }
                     }
@@ -121,57 +102,76 @@ namespace GestionTPE.ViewModel
             return true;
         }
 
-        public void BrulerCodeBarre()
-        {
-            using (var client = new Client_OSS.OnlineServerServiceClient())
-                if (User.tpetoken.HasValue)
-                {
-                    loyaltymodel.Validationcode = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codeproduitCrypt);
-                    loyaltymodel.VisibiliteBurned = Visibility.Visible;
-                    loyaltymodel.VisibiliteFree = Visibility.Hidden;
-                    loyaltymodel.VisibiliteLocked = Visibility.Hidden;
-                }
-        }
-
         public void ShowCodebarreStatus()
         {
-            string codeproduit = loyaltymodel.Codeproduit;
-            string codebarre = loyaltymodel.Codebarre;
+            string codeproduitCrypt = string.Empty;
             string codebarreCrypt = string.Empty;
             string codebarreCrypRep = string.Empty;
 
             if (User.tpetoken.HasValue)
             {
-                codeproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codeproduit.ToString());
-                codebarreCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codebarre.ToString());
-            }
-            using (var client = new Client_OSS.OnlineServerServiceClient())
-            {
-                if
-                    (
-                    User.tpetoken.HasValue
-                    )
+                codeproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codeproduit);
+                codebarreCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codebarre);
+
+                using (var client = new Client_OSS.OnlineServerServiceClient())
                 {
                     codebarreCrypRep = client.GetLoyaltyBarCodeStatus(User.codesite, User.numtpe, codeproduitCrypt, codebarreCrypt);
 
                     loyaltymodel.Pointproduit = SecurityManager.Instance.decrypt((int)User.tpetoken, codebarreCrypRep);
 
-                    string pprod = loyaltymodel.Pointproduit;
-
-                    Match match = Regex.Match(
-                        pprod, "^KO[1-99]{1,2}$");
-                    if
-                        (!match.Success)
-                    {
-                        loyaltymodel.VisibiliteLocked = Visibility.Visible;
-                        loyaltymodel.VisibiliteBurned = Visibility.Hidden;
-                        loyaltymodel.VisibiliteFree = Visibility.Hidden;
-
-                        //loyaltymodel.VisibiliteInformations = Visibility.Visible;
-                        //loyaltymodel.VisibiliteErreur = Visibility.Hidden;
-                    }
+                    if (VerificationsOk(loyaltymodel.Pointproduit))
+                    { loyaltymodel.Statutcode = Constantes.Lock; }
+                    else
+                    { loyaltymodel.Statutcode = Constantes.EchecLock; }
                 }
             }
+            else
+            {
+                // TODO : Retourner une erreur not connected
+            }
+        }
+
+        public void BrulerCodeBarre()
+        {
+            string codebarreCrypt = string.Empty;
+
+            using (var client = new Client_OSS.OnlineServerServiceClient())
+
+                if (User.tpetoken.HasValue && loyaltymodel.Pointproduit != null)
+                {
+                    codebarreCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codebarre);
+
+                    string reponseCryptee = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreCrypt);
+
+                    string repDecryptee = SecurityManager.Instance.decrypt((int)User.tpetoken, reponseCryptee);
+
+                    if (VerificationsOk(repDecryptee))
+                    {
+                        loyaltymodel.Statutcode = Constantes.Burn.ToString();
+                    }
+                    else loyaltymodel.Statutcode = Constantes.EchecBurn.ToString();
+                }
+        }
+
+        public void LibererCodeProduit()
+        {
+            string codebarCrypt = string.Empty;
+            string repCrypt = string.Empty;
+            string repDecrypt = string.Empty;
+
+            using (var client = new Client_OSS.OnlineServerServiceClient())
+                if (User.tpetoken.HasValue && loyaltymodel.Pointproduit != null)
+                {
+                    codebarCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codebarre);
+                    repCrypt = client.FreeLoyaltyBarCode(User.codesite, User.numtpe, codebarCrypt);
+                    repDecrypt = SecurityManager.Instance.decrypt((int)User.tpetoken, repCrypt);
+
+                    if (VerificationsOk(repDecrypt))
+                    {
+                        loyaltymodel.Statutcode = Constantes.Free.ToString();
+                    }
+                    else loyaltymodel.Statutcode = Constantes.EchecFreed.ToString();
+                }
         }
 
         #endregion Lubrifiants
@@ -179,6 +179,26 @@ namespace GestionTPE.ViewModel
         private bool CanReturnAccueil()
         {
             return true;
+        }
+
+        private bool CanBrulerCodeBarre()
+        {
+            if (loyaltymodel.Pointproduit != null)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private bool CanFreeCodeBarre()
+        {
+            if (loyaltymodel.Pointproduit != null)
+            {
+                return true;
+            }
+            else
+                return false;
         }
 
         public void RetourAccueil()
@@ -217,11 +237,17 @@ namespace GestionTPE.ViewModel
         {
             get
             {
-                return new ViewModelRelay(BrulerCodeBarre);
+                return new ViewModelRelay(BrulerCodeBarre, CanBrulerCodeBarre);
             }
         }
 
-        //public ICommand LibererCodeProduitCommand(LibererCodeProduit);
+        public ICommand LibererCodeProduitCommand
+        {
+            get
+            {
+                return new ViewModelRelay(LibererCodeProduit, CanFreeCodeBarre);
+            }
+        }
 
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
         {

@@ -21,7 +21,7 @@ namespace GestionTPE.Model
 
         private long numerodecarte;
 
-        [ManageRegEx("regexReponseDecodee", ErrorMessage = "ERREUR")]
+        [RegularExpression("^KO[1-99]{1,2}$", ErrorMessage = "ERREUR")]
         private string reponseDecodee;
 
         private string pointscarte;
@@ -100,15 +100,16 @@ namespace GestionTPE.Model
 
         #region Produits
 
-        [ManageRegEx("regexCodeProduit", ErrorMessage = "Mauvaise saisie du Code Produit")]
+        [RegularExpression("^[1-9]{2}$", ErrorMessage = "Mauvaise saisie du Code Produit")]
+        [StringLength(2)]
         private string codeproduit;
 
-        [ManageRegEx("regexCodeBarre", ErrorMessage = "Mauvaise saisie de Code Barre")]
+        [RegularExpression("^KO[1-99]{1,2}$", ErrorMessage = "Mauvaise saisie de Code Barre")]
         private string codebarre;
 
         private string infosproduits;
 
-        [ManageRegEx("regexStatutCodeBarre", ErrorMessage = "ERREUR")]
+        [RegularExpression("^[1-9]{2}$", ErrorMessage = "ERREUR")]
         private string statutcode;
 
         private string pointproduit;
@@ -215,17 +216,17 @@ namespace GestionTPE.Model
             }
         }
 
-        public string Validationcode
-        {
-            get
-            {
-                return validationcode;
-            }
-            set
-            {
-                SetField(ref validationcode, value);
-            }
-        }
+        //public string Validationcode
+        //{
+        //    get
+        //    {
+        //        return validationcode;
+        //    }
+        //    set
+        //    {
+        //        SetField(ref validationcode, value);
+        //    }
+        //}
 
         #endregion Produits
     }

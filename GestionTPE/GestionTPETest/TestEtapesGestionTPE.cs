@@ -6,6 +6,7 @@ using GestionTPE.Managers;
 using GestionTPE.View;
 using GestionTPE.Class;
 using System.Text.RegularExpressions;
+using GestionTPE.Common;
 
 namespace GestionTPE
 {
@@ -15,7 +16,6 @@ namespace GestionTPE
         private LoginViewModel loginViewModel;
 
         private LoyaltyModel loyaltymodel;
-        private string codebarreproduitCrypt = string.Empty;
 
         /// <summary>
         /// test à effectuer en debut de test
@@ -61,10 +61,11 @@ namespace GestionTPE
         {
             if (User.tpetoken.HasValue)
             {
-                string codeproduit = "81";
-                string codebarreproduit = "2L01357460";
+                string codeproduit = "69";
+                string codebarreproduit = "1L03853839";
 
                 string codeproduitCryp = string.Empty;
+                string codebarreproduitCrypt = string.Empty;
 
                 string infoprodAcrypterRep;
 
@@ -87,23 +88,34 @@ namespace GestionTPE
                     {
                         string codeproduitbrule = string.Empty;
                         codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreproduitCrypt);
+                        var brule = Constantes.Burn.ToString();
+
+                        var cdburned = codeproduitbrule;
+
+                        Match codematch = Regex.Match(
+                            codeproduitbrule, "^KO[1-99]{1,2}$");
+
+                        //if (!match.Success)
+                        //{
+                        //}
                     }
                 }
             }
         }
 
-        [TestMethod]
-        public void BrulerCodeProduit()
-        {
-            if (User.tpetoken.HasValue)
-            {
-                //string codeproduitCrypt;
-                string codeproduitbrule = string.Empty;
+        //[TestMethod]
+        //public void BrulerCodeProduit()
+        //{
+        //    if (User.tpetoken.HasValue)
+        //    {
+        //        //string codeproduitCrypt;
+        //        string codeproduitbrule = string.Empty;
 
-                var client = new Client_OSS.OnlineServerServiceClient();
-                codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreproduitCrypt);
-            }
-        }
+        //        var client = new Client_OSS.OnlineServerServiceClient();
+
+        //        //codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codeproduitCrypt);
+        //    }
+        //}
     }
 }
 

@@ -80,11 +80,10 @@
     </Compile>
     <Compile Include="Class\Produit.cs" />
     <Compile Include="Class\User.cs" />
-    <Compile Include="Enum\EnumStatusCodeProduit.cs" />
-    <Compile Include="Enum\ErrorMessages.cs" />
+    <Compile Include="Common\Constantes.cs" />
+    <Compile Include="Enum\MessagesErreurs.cs" />
     <Compile Include="Enum\WindowsEnum.cs" />
     <Compile Include="Managers\AppConfigManager.cs" />
-    <Compile Include="Managers\ManageRegEx.cs" />
     <Compile Include="Managers\RegexValidation.cs" />
     <Compile Include="Managers\SecurityManager.cs" />
     <Compile Include="Managers\WindowsManager.cs" />
@@ -97,6 +96,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Test\RijndaelTest.cs" />
+    <Compile Include="ViewModel\Constance.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\LoyaltyViewModel.cs" />
     <Compile Include="ViewModel\ViewModelRelay.cs" />
