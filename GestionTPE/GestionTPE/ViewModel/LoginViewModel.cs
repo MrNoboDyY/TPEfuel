@@ -49,7 +49,7 @@ namespace GestionTPE.ViewModel
             set { webserviceAdress = value; }
         }
 
-        private bool CanShowTomcardView()
+        private bool CanShowLoyaltydView()
         {
             return loginmodel.IsConnected;
         }
@@ -120,16 +120,11 @@ namespace GestionTPE.ViewModel
         /// <summary>
         /// envoi depuis le relay de la partie Loyalty/loyaltyview
         /// </summary>
-        public ICommand LoyaltyViewCommand { get { return new ViewModelRelay(ShowLoyaltyView); } }
+        public ICommand LoyaltyViewCommand { get { return new ViewModelRelay(ShowLoyaltyView, CanShowLoyaltydView); } }
 
         /// <summary>
         /// envoi depuis le relay de la connexion
         /// </summary>
         public ICommand ConnectionCommand { get { return new ViewModelRelay(Connection, CanConnect); } }
-
-        /// <summary>
-        /// envoi depuis le relay de la partie Tomcard / Tomcardview
-        /// </summary>
-        public ICommand TomcardViewCommand { get { return new ViewModelRelay(Connection, CanShowTomcardView); } }
     }
 }

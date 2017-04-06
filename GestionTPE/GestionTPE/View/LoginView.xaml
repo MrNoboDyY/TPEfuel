@@ -3,30 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModel="clr-namespace:GestionTPE.ViewModel"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="LoginView" Height="346" Width="492" WindowStyle="None" ResizeMode="NoResize">
+        Title="LoginView" Height="346" Width="492" WindowStyle="SingleBorderWindow"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="Black">
     <Window.DataContext>
-        <viewModel:LoginViewModel/>
+        <viewModel:LoginViewModel />
     </Window.DataContext>
-    <Grid>
+    <Grid Background="#FFB3DEF7">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <materialDesign:PackIcon Kind="AccessPointNetwork" Height="43" Width="63" Margin="419,166,0,0" Foreground="LightBlue" />
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="170,64,0,0" TextWrapping="Wrap" Text="{Binding loginModel.NumTpe,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="142"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="170,107,0,0" TextWrapping="Wrap" Text="{Binding loginModel.CodeSite,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="142"/>
-        <Label Content="Numero TPE :" HorizontalAlignment="Left" Margin="83,74,0,0" VerticalAlignment="Top"/>
-        <Label Content="Numero Site :" HorizontalAlignment="Left" Margin="83,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,-0.462"/>
+        <materialDesign:PackIcon Kind="AccessPointNetwork" Height="43" Width="63" Margin="404,166,0,0" Foreground="Red" BorderBrush="Black">
+            <materialDesign:PackIcon.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </materialDesign:PackIcon.OpacityMask>
+        </materialDesign:PackIcon>
+        <TextBox HorizontalAlignment="Left" Height="38" Margin="170,64,0,0" TextWrapping="Wrap" Text="{Binding loginModel.NumTpe,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="142" />
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="170,107,0,0" TextWrapping="Wrap" Text="{Binding loginModel.CodeSite,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="142" />
+        <Label Content="Numero TPE :" HorizontalAlignment="Left" Margin="83,74,0,0" VerticalAlignment="Top" />
+        <Label Content="Numero Site :" HorizontalAlignment="Left" Margin="83,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,-0.462" />
 
         <Button Command="{Binding ConnectionCommand}" Content="Connexion" HorizontalAlignment="Left" Margin="352,74,0,0" VerticalAlignment="Top" Width="115" />
         <Button  Command="{Binding DisconnectCommand}" Content="Déconnexion" HorizontalAlignment="Left" Margin="352,129,0,0" VerticalAlignment="Top" Width="auto" />
 
-        <!--<Button Command="{Binding TomcardViewCommand}" Content="TOMCARD" HorizontalAlignment="Left" Margin="107,250,0,0" VerticalAlignment="Top" Width="284"/>-->
-        <Button  Command="{Binding LoyaltyViewCommand}" Content="ENTER LOYALTY / TOMCARD" HorizontalAlignment="Left" Margin="107,247,0,0" VerticalAlignment="Top" Width="284" Height="68" />
-        <TextBox  Name="webserviceAddress" Text="{Binding loginModel.WebServiceAddress,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="30" Margin="111,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" IsEnabled="False"/>
-        <Label Content="URL WebService" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="auto"/>
-        <Grid HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="492" Background="#FF8B8B8B" MouseDown="Grid_MouseDown">
-            <Button Content="X" BorderBrush="#FF8B8B8B" Height="35" Margin="432,0,-2,0" VerticalAlignment="Top" Background="#FF8B8B8B"/>
-        </Grid>
-
+        <!--<Button Command="{Binding TomcardViewCommand}" Content="TOMCARD" HorizontalAlignment="Left" Margin="107,250,0,0" VerticalAlignment="Top" Width="284" />-->
+        <Button  Command="{Binding LoyaltyViewCommand}" Content="ENTER LOYALTY / TOMCARD" Margin="111,240,91,10" Height="Auto" />
+        <TextBox  Name="webserviceAddress" Text="{Binding loginModel.WebServiceAddress,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="30" Margin="111,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" IsEnabled="False" BorderThickness="2" />
+        <Label Content="URL WebService" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="auto" />
+        <!--<Grid HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="492" Background="#FF8B8B8B" MouseDown="Grid_MouseDown">
+        </Grid>-->
     </Grid>
 </Window>

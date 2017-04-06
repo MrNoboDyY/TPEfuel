@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PostSharp.Patterns.Common</id>
+    <version>4.3.31</version>
+    <title>PostSharp Common Pattern Library</title>
+    <authors>PostSharp Technologies</authors>
+    <owners>PostSharp Technologies</owners>
+    <licenseUrl>http://www.postsharp.net/links/nuget-license</licenseUrl>
+    <projectUrl>http://www.postsharp.net/links/nuget-home</projectUrl>
+    <iconUrl>http://www.postsharp.net/nuget/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Ready-made implementation of the Aggregatable (parent-child) pattern and common functionalities used by other PostSharp pattern libraries.  An official PostSharp pattern library.</description>
+    <summary />
+    <language>en-US</language>
+    <tags>postsharp sharcrafters aop aspect Patterns aggregatable parent child</tags>
+    <dependencies>
+      <dependency id="PostSharp" version="[4.3.31, 5.0.0)" />
+    </dependencies>
+  </metadata>
+</package>

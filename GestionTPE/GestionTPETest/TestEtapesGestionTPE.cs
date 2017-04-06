@@ -62,7 +62,13 @@ namespace GestionTPE
             if (User.tpetoken.HasValue)
             {
                 string codeproduit = "69";
-                string codebarreproduit = "1L03853839";
+                string codebarre = "1L03853839";
+
+                string codeproduit1 = "72";
+                string codebarre1 = "2L03456127";
+
+                string codeproduit2 = "71";
+                string codebarre2 = " 5L03451267";
 
                 string codeproduitCryp = string.Empty;
                 string codebarreproduitCrypt = string.Empty;
@@ -72,7 +78,7 @@ namespace GestionTPE
                 if (User.tpetoken.HasValue)
                 {
                     codeproduitCryp = SecurityManager.Instance.encrypt((int)User.tpetoken, codeproduit.ToString());
-                    codebarreproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codebarreproduit.ToString());
+                    codebarreproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, codebarre.ToString());
                 }
 
                 var client = new Client_OSS.OnlineServerServiceClient();

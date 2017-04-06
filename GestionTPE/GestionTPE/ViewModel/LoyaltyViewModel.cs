@@ -67,7 +67,6 @@ namespace GestionTPE.ViewModel
                     reponseCryptee = client.GetLoyaltyPoints(User.codesite, User.numtpe, donneeCryptee);
                     if (reponseCryptee != string.Empty)
                     {
-                        //str = SecurityManager.Instance.decrypt((int)User.tpetoken, reponseCryptee);
                         loyaltymodel.ReponseDecodee = SecurityManager.Instance.decrypt((int)User.tpetoken, reponseCryptee);
 
                         if (VerificationsOk(loyaltymodel.ReponseDecodee))
@@ -97,12 +96,12 @@ namespace GestionTPE.ViewModel
 
         #region Lubrifiants
 
-        private bool CanShowCodebarreStatus()
-        {
-            return true;
-        }
+        //private bool CanShowCodebarreStatus()
+        //{
+        //    return true;
+        //}
 
-        public void ShowCodebarreStatus()
+        public void ShowCodebarrePoint()
         {
             string codeproduitCrypt = string.Empty;
             string codebarreCrypt = string.Empty;
@@ -120,6 +119,7 @@ namespace GestionTPE.ViewModel
                     loyaltymodel.Pointproduit = SecurityManager.Instance.decrypt((int)User.tpetoken, codebarreCrypRep);
 
                     if (VerificationsOk(loyaltymodel.Pointproduit))
+
                     { loyaltymodel.Statutcode = Constantes.Lock; }
                     else
                     { loyaltymodel.Statutcode = Constantes.EchecLock; }
@@ -147,9 +147,9 @@ namespace GestionTPE.ViewModel
 
                     if (VerificationsOk(repDecryptee))
                     {
-                        loyaltymodel.Statutcode = Constantes.Burn.ToString();
+                        loyaltymodel.Statutcode = Constantes.Burn;
                     }
-                    else loyaltymodel.Statutcode = Constantes.EchecBurn.ToString();
+                    else loyaltymodel.Statutcode = Constantes.EchecBurn;
                 }
         }
 
@@ -168,9 +168,9 @@ namespace GestionTPE.ViewModel
 
                     if (VerificationsOk(repDecrypt))
                     {
-                        loyaltymodel.Statutcode = Constantes.Free.ToString();
+                        loyaltymodel.Statutcode = Constantes.Free;
                     }
-                    else loyaltymodel.Statutcode = Constantes.EchecFreed.ToString();
+                    else loyaltymodel.Statutcode = Constantes.EchecFreed;
                 }
         }
 
@@ -194,6 +194,16 @@ namespace GestionTPE.ViewModel
         private bool CanFreeCodeBarre()
         {
             if (loyaltymodel.Pointproduit != null)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private bool CanShowCodebarrePoint()
+        {
+            if (loyaltymodel.Codeproduit != null && loyaltymodel.Codebarre != null)
             {
                 return true;
             }
@@ -225,11 +235,11 @@ namespace GestionTPE.ViewModel
             }
         }
 
-        public ICommand CodebarreStatusCommand
+        public ICommand CodebarrePointCommand
         {
             get
             {
-                return new ViewModelRelay(ShowCodebarreStatus);
+                return new ViewModelRelay(ShowCodebarrePoint, CanShowCodebarrePoint);
             }
         }
 

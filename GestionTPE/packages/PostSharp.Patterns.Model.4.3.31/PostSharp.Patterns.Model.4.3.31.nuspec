@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PostSharp.Patterns.Model</id>
+    <version>4.3.31</version>
+    <title>PostSharp Model Pattern Library</title>
+    <authors>PostSharp Technologies</authors>
+    <owners>PostSharp Technologies</owners>
+    <licenseUrl>https://www.postsharp.net/links/nuget-license</licenseUrl>
+    <projectUrl>https://www.postsharp.net/links/nuget-home</projectUrl>
+    <iconUrl>https://www.postsharp.net/nuget/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Ready-made implementations for popular design patterns: INotifyPropertyChanged, Disposable, Recordable (undo/redo), Code Contracts. An official PostSharp pattern library.</description>
+    <summary />
+    <language>en-US</language>
+    <tags>postsharp sharcrafters aop aspect Patterns INotifyPropertyChanged notifypropertychanged inpc undo redo recordable code contracts disposable IDisposable dispose</tags>
+    <dependencies>
+      <dependency id="PostSharp" version="[4.3.31, 5.0.0)" />
+      <dependency id="PostSharp.Patterns.Common" version="[4.3.31]" />
+    </dependencies>
+  </metadata>
+</package>
