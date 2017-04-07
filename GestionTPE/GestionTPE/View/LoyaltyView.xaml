@@ -51,7 +51,7 @@
                 <Label Name="lblcodeproduit" Content="codproduit" Height="26" Margin="21,26,603,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center" />
                 <TextBox Name="codeproduit" Height="41" MaxLength="2" Text="{Binding LoyaltyModel.Codeproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   Margin="21,65,603,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.478" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="1" />
                 <TextBox Name="codebarre" HorizontalAlignment="Right" Height="38" Text="{Binding LoyaltyModel.Codebarre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,68,492,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" RenderTransformOrigin="1.71,0.391" Grid.Column="1" BorderThickness="1" />
-                <Button Content="Ajouter" Command="{Binding CodebarrePointCommand}" HorizontalAlignment="Left" Height="58" Margin="279,48,0,0" VerticalAlignment="Top" Width="89" Grid.Column="1" BorderThickness="3" BorderBrush="#FF1672CF" />
+                <Button Name="ajouter" Content="Ajouter" Command="{Binding CodebarrePointCommand}" HorizontalAlignment="Left" Height="58" Margin="279,48,0,0" VerticalAlignment="Top" Width="89" Grid.Column="1" BorderThickness="3" BorderBrush="#FF1672CF" />
                 <TextBox Name="points" HorizontalAlignment="Left" IsEnabled="False" Text="{Binding LoyaltyModel.Pointproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="39" Margin="384,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Grid.Column="1" Foreground="Black" BorderThickness="1" />
                 <Label Name="lblpoints" Content="points" HorizontalAlignment="Center" Height="35" Margin="384,26,315,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="1.459,0.346" Grid.Column="1" FontWeight="Bold" />
                 <Label Name="lblcodebarre" Content="codebarre" Margin="172,26,500,0" Grid.Column="1" FontWeight="Bold" VerticalAlignment="Top" />
@@ -60,7 +60,7 @@
             </Grid>
         </TabItem>
         <TabItem Header="LISTE PRODUITS">
-            <DataGrid CanUserAddRows="False" ItemsSource="{Binding}" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" Name="dgproduits" HorizontalAlignment="Left" Height="364" VerticalAlignment="Top" Width="742" SelectionMode="Extended" />
+            <DataGrid Name="dgproduits" AutoGenerateColumns="True" CanUserAddRows="False" ItemsSource="{Binding}" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" SelectionMode="Extended" />
         </TabItem>
     </TabControl>
 </Window>

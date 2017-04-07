@@ -102,10 +102,10 @@ namespace GestionTPE.Model
 
         [RegularExpression("^[1-9]{2}$", ErrorMessage = "Mauvaise saisie du Code Produit")]
         [StringLength(2)]
-        private string codeproduit;
+        private string codeproduit = string.Empty;
 
         [RegularExpression("^KO[1-99]{1,2}$", ErrorMessage = "Mauvaise saisie de Code Barre")]
-        private string codebarre;
+        private string codebarre = string.Empty;
 
         private string infosproduits;
 
@@ -215,18 +215,6 @@ namespace GestionTPE.Model
                 SetField(ref pointproduit, value);
             }
         }
-
-        //public string Validationcode
-        //{
-        //    get
-        //    {
-        //        return validationcode;
-        //    }
-        //    set
-        //    {
-        //        SetField(ref validationcode, value);
-        //    }
-        //}
 
         #endregion Produits
     }

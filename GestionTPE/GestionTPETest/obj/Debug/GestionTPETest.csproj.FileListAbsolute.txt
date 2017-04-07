@@ -12,7 +12,16 @@ C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPET
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.dll
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.pdb
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPE.exe
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\PostSharp.dll
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\PostSharp.Patterns.Common.dll
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\PostSharp.Patterns.Model.dll
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPE.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\PostSharp.xml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\PostSharp.Patterns.Common.xml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\PostSharp.Patterns.Model.xml
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\bin\Debug\GestionTPETest.pssym
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.csprojResolveAssemblyReference.cache
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.dll.postsharp
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.dll
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\GestionTPETest.pdb
+C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPETest\obj\Debug\PostSharpHost.config

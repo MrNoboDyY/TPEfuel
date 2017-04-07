@@ -19,9 +19,6 @@ namespace GestionTPE.Managers
             Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             ServiceModelSectionGroup serviceModelSectionGroup = ServiceModelSectionGroup.GetSectionGroup(configuration);
             ClientSection clientSection = serviceModelSectionGroup.Client;
-            /* forech(string key in ConfigurationManager.AppSettings)
-                {string value = ConfigurationManager.AppSettings[key];
-             * this.Url = value;}*/
             return clientSection.Endpoints[0].Address.AbsoluteUri;
         }
     }

@@ -49,11 +49,18 @@ namespace GestionTPE.ViewModel
             set { webserviceAdress = value; }
         }
 
+        /// <summary>
+        /// permet l'utilisation du bouton Enter
+        /// </summary>
+        /// <returns></returns>
         private bool CanShowLoyaltydView()
         {
             return loginmodel.IsConnected;
         }
 
+        /// <summary>
+        /// action sur le clic du bouton Enter Loyalty/Tomcard
+        /// </summary>
         private void ShowLoyaltyView()
         {
             if (loginmodel.IsConnected)
@@ -67,6 +74,7 @@ namespace GestionTPE.ViewModel
 
         private bool CanConnect()
         {
+            /* si déja connecté, griser le bouton*/
             if (loginmodel.IsConnected)
                 return false;
             /*si CodeSite de l'objet loginmodel Empty*/

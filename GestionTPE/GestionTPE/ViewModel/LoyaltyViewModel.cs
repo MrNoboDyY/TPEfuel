@@ -47,7 +47,12 @@ namespace GestionTPE.ViewModel
 
         private bool CanShowSoldePointCarte()
         {
-            return true;
+            if (loyaltymodel.NumeroDeCarte != null)
+            {
+                return true;
+            }
+            else
+                return false;
         }
 
         public void ShowSoldePointCarte()
@@ -96,11 +101,6 @@ namespace GestionTPE.ViewModel
 
         #region Lubrifiants
 
-        //private bool CanShowCodebarreStatus()
-        //{
-        //    return true;
-        //}
-
         public void ShowCodebarrePoint()
         {
             string codeproduitCrypt = string.Empty;
@@ -127,7 +127,6 @@ namespace GestionTPE.ViewModel
             }
             else
             {
-                // TODO : Retourner une erreur not connected
             }
         }
 
@@ -203,7 +202,7 @@ namespace GestionTPE.ViewModel
 
         private bool CanShowCodebarrePoint()
         {
-            if (loyaltymodel.Codeproduit != null && loyaltymodel.Codebarre != null)
+            if (loyaltymodel.Codeproduit != null)
             {
                 return true;
             }

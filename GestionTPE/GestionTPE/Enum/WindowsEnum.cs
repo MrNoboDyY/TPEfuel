@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionTPE.Enum
 {
-    enum WindowsEnum
+    internal enum WindowsEnum
     {
         LoginView,
         LoyaltyView,
-        TomcardView,
-        SoldePointCarteView,
     }
 }
