@@ -21,12 +21,7 @@ namespace GestionTPE.View
     {
         public LoyaltyView()
         {
-           
             InitializeComponent();
         }
-
-
-
-        
     }
 }

@@ -1,34 +1,3 @@
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe.config
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.pdb
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.pdb
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.dll
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.dll
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.pdb
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.pdb
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.xml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\UserControl1.baml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.baml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\test.baml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.baml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\App.baml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\UserControl1.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoginView.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\SoldePointCarteView.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\test.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\App.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GeneratedInternalTypeHelper.g.cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.cache
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.lref
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoginView.baml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\SoldePointCarteView.baml
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.g.resources
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.Properties.Resources.resources
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csproj.GenerateResource.Cache
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csprojResolveAssemblyReference.cache
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe.config
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\bin\Debug\GestionTPE.pdb
@@ -62,3 +31,36 @@ C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\GestionTPE.pdb
 C:\Users\b.bidjocka\Documents\Visual Studio 2012\Projects\GestionTPE\GestionTPE\obj\Debug\PostSharpHost.config
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe.config
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.exe
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.pdb
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.dll
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.dll
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\PostSharp.dll
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\PostSharp.Patterns.Common.dll
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\PostSharp.Patterns.Model.dll
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignColors.pdb
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.pdb
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\MaterialDesignThemes.Wpf.xml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\PostSharp.xml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\PostSharp.Patterns.Common.xml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\PostSharp.Patterns.Model.xml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\bin\Debug\GestionTPE.pssym
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.baml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\App.baml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoginView.g.cs
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.g.cs
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\TomcardView.g.cs
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\App.g.cs
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.cache
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE_MarkupCompile.lref
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoginView.baml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\View\LoyaltyView.baml
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.g.resources
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.Properties.Resources.resources
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.csproj.GenerateResource.Cache
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe.postsharp
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.exe
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\GestionTPE.pdb
+G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\PostSharpHost.config

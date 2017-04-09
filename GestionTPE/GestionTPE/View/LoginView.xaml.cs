@@ -20,20 +20,15 @@ namespace GestionTPE.View
     /// </summary>
     public partial class LoginView : Window
     {
-
         public LoginView()
         {
             InitializeComponent();
-
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
-                this.DragMove();
+                DragMove();
         }
-
-       
     }
 }
-    

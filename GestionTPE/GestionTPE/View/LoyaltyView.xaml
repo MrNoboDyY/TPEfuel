@@ -7,7 +7,7 @@
     <Window.DataContext>
         <viewModel:LoyaltyViewModel />
     </Window.DataContext>
-    <TabControl Margin="0,0,-6,-3">
+    <TabControl Margin="0,0,-6,-3" HorizontalAlignment="Right" Width="752" Height="395" VerticalAlignment="Top">
         <TabItem Header="SOLDE POINT">
             <Grid Background="#FFB3DEF7" Margin="-9,-1,1,-4">
                 <Grid.RowDefinitions>
@@ -39,7 +39,7 @@
             </Grid>
         </TabItem>
         <TabItem Header="PRODUIT">
-            <Grid Background="#FFB3DEF7" Margin="-10,-5,0,0">
+            <Grid Background="#FFB3DEF7" Margin="-10,-1,-2,-1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*" />
                     <ColumnDefinition />
@@ -58,9 +58,6 @@
                 <Label Name="lblstatut" Content="statut" HorizontalAlignment="Center" Height="35" Margin="496,26,210,0" VerticalAlignment="Top" Width="46" Grid.Column="1" FontWeight="Bold" />
                 <TextBox Name="statut" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="38" Margin="469,68,0,0" TextWrapping="Wrap" Text="{Binding LoyaltyModel.Statutcode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="110" BorderThickness="1" />
             </Grid>
-        </TabItem>
-        <TabItem Header="LISTE PRODUITS">
-            <DataGrid Name="dgproduits" AutoGenerateColumns="True" CanUserAddRows="False" ItemsSource="{Binding}" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" SelectionMode="Extended" Margin="0,0,3,0" />
         </TabItem>
     </TabControl>
 </Window>
