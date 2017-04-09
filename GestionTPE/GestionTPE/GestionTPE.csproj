@@ -90,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Class\Produit.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Common\Constantes.cs" />
     <Compile Include="Enum\MessagesErreurs.cs" />
@@ -116,9 +117,6 @@
     </Compile>
     <Compile Include="View\LoyaltyView.xaml.cs">
       <DependentUpon>LoyaltyView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TomcardView.xaml.cs">
-      <DependentUpon>TomcardView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -162,10 +160,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LoyaltyView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\TomcardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

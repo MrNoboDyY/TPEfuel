@@ -114,7 +114,7 @@ namespace GestionTPE.Model
 
         private string pointproduit;
 
-        private string validationcode;
+        //private string validationcode;
 
         private Visibility visibiliteLocked;
         private Visibility visibiliteBurned;
