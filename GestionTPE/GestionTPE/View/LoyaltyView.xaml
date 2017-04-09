@@ -9,7 +9,7 @@
     </Window.DataContext>
     <TabControl Margin="0,0,-6,-3">
         <TabItem Header="SOLDE POINT">
-            <Grid Background="#FFB3DEF7" Margin="-9,-7,-3,-4">
+            <Grid Background="#FFB3DEF7" Margin="-9,-1,1,-4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="206" />
                 </Grid.RowDefinitions>
@@ -60,7 +60,7 @@
             </Grid>
         </TabItem>
         <TabItem Header="LISTE PRODUITS">
-            <DataGrid Name="dgproduits" AutoGenerateColumns="True" CanUserAddRows="False" ItemsSource="{Binding}" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" SelectionMode="Extended" />
+            <DataGrid Name="dgproduits" AutoGenerateColumns="True" CanUserAddRows="False" ItemsSource="{Binding}" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" SelectionMode="Extended" Margin="0,0,3,0" />
         </TabItem>
     </TabControl>
 </Window>
