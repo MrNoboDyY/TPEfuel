@@ -1,5 +1,6 @@
 ﻿using GestionTPE.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,11 +11,9 @@ namespace GestionTPE.Class
 {
     public class Produit : NotifyPropertyChanged
     {
-        public static string codeproduit;
-        public static string codebarre;
-        public static string pointproduit;
-        public static string statutcode;
-
-        private ObservableCollection<Produit> produits = new ObservableCollection<Produit>();
+        public string codeproduit { get; set; }
+        public string codebarre { get; set; }
+        public string pointproduit { get; set; }
+        public string statutcode { get; set; }
     }
 }

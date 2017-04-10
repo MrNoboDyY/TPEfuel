@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\
+I:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\obj\Debug\
 GestionTPE
 none
 false
 POSTSHARP;DEBUG;TRACE
-G:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\App.xaml
+I:\ProjetApplicam\TPEfuel\GestionTPE\GestionTPE\App.xaml
 2-1420507865
 
-28613905963
-26-1608725276
+28-1919561500
+26196483268
 View\LoginView.xaml;View\LoyaltyView.xaml;
 
-False
+True
 

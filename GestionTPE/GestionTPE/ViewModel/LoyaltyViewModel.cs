@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Data;
 using GestionTPE.Common;
+using System.Collections.ObjectModel;
 
 namespace GestionTPE.ViewModel
 {
@@ -26,6 +27,8 @@ namespace GestionTPE.ViewModel
             loyaltymodel = new LoyaltyModel();
             loyaltymodel.Codeproduit = string.Empty;
             loyaltymodel.Codebarre = string.Empty;
+            //List<Produit> produits = new List<Produit>();
+            loyaltymodel.Produits = new ObservableCollection<Produit>();
 
             loyaltymodel.VisibiliteInformations = Visibility.Hidden;
             loyaltymodel.VisibiliteErreur = Visibility.Hidden;
@@ -130,6 +133,17 @@ namespace GestionTPE.ViewModel
             }
         }
 
+        private void AjouterProduit()
+        {
+            Produit produits = new Produit();
+            produits.codeproduit = LoyaltyModel.Codeproduit;
+            produits.codebarre = LoyaltyModel.Codebarre;
+            produits.pointproduit = LoyaltyModel.Pointproduit;
+            produits.statutcode = LoyaltyModel.Statutcode;
+
+            loyaltymodel.Produits.Add(produits);
+        }
+
         public void BrulerCodeBarre()
         {
             string codebarreCrypt = string.Empty;
@@ -223,6 +237,14 @@ namespace GestionTPE.ViewModel
             get
             {
                 return new ViewModelRelay(ShowSoldePointCarte);
+            }
+        }
+
+        public ICommand AjouterProduitCommand
+        {
+            get
+            {
+                return new ViewModelRelay(AjouterProduit);
             }
         }
 

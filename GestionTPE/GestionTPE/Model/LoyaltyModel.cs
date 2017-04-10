@@ -1,6 +1,8 @@
-﻿using GestionTPE.Managers;
+﻿using GestionTPE.Class;
+using GestionTPE.Managers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -114,6 +116,8 @@ namespace GestionTPE.Model
 
         private string pointproduit;
 
+        private ObservableCollection<Produit> listproduits;
+
         //private string validationcode;
 
         private Visibility visibiliteLocked;
@@ -214,6 +218,12 @@ namespace GestionTPE.Model
             {
                 SetField(ref pointproduit, value);
             }
+        }
+
+        public ObservableCollection<Produit> Produits
+        {
+            get { return listproduits; }
+            set { listproduits = value; }
         }
 
         #endregion Produits

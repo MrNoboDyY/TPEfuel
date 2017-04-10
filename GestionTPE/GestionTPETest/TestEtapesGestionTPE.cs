@@ -7,6 +7,8 @@ using GestionTPE.View;
 using GestionTPE.Class;
 using System.Text.RegularExpressions;
 using GestionTPE.Common;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace GestionTPE
 {
@@ -14,6 +16,23 @@ namespace GestionTPE
     public class TestEtapesGestionTPE
     {
         private LoginViewModel loginViewModel;
+        //private LoyaltyModel loyaltymodel;
+
+        public void LoyaltyViewModel()
+        {
+            loyaltymodel = new LoyaltyModel();
+            loyaltymodel.Codeproduit = string.Empty;
+            loyaltymodel.Codebarre = string.Empty;
+        }
+
+        public LoyaltyModel LoyaltyModel
+        {
+            get { return loyaltymodel; }
+            set { loyaltymodel = value; }
+        }
+
+        private ObservableCollection<Produit> produits = new ObservableCollection<Produit>();
+        //private List<Produit> produits = new List<Produit>();
 
         private LoyaltyModel loyaltymodel;
 
@@ -30,50 +49,25 @@ namespace GestionTPE
             Assert.IsTrue(loginViewModel.loginModel.IsConnected);
         }
 
-        /// <summary>
-        /// encrypter le numero de carte avec le securityManager
-        /// </summary>
-        //[TestMethod]
-        //public void EncrypterCarte()
-        //{
-        //    if (User.tpetoken.HasValue)
-        //    {
-        //        string reponseDecodee;//= string.Empty;
-        //        string reponseCryptee;
-        //        string donneeCryptee = SecurityManager.Instance.encrypt((int)User.tpetoken.Value, "1404242000044271626");
-
-        //        var client = new Client_OSS.OnlineServerServiceClient();
-
-        //        if (User.tpetoken.HasValue)
-        //        {
-        //            reponseCryptee = client.GetLoyaltyPoints(2033, 82, donneeCryptee);
-        //            if (reponseCryptee != string.Empty)
-        //            {
-        //                reponseDecodee = SecurityManager.Instance.decrypt((int)User.tpetoken.Value, reponseCryptee);
-
-        //            }
-        //        }
-        //    }
-        //}
-
         [TestMethod]
         public void StatutCodeBarre()
         {
             if (User.tpetoken.HasValue)
             {
-                string codeproduit = "69";
-                string codebarre = "1L03853839";
+                string codeproduit = "79";
+                string codebarre = "1L03853819";
 
                 string codeproduit1 = "72";
-                string codebarre1 = "2L03456127";
+                string codebarre1 = "2L03456117";
 
                 string codeproduit2 = "71";
-                string codebarre2 = " 5L03451267";
+                string codebarre2 = " 5L03451227";
 
                 string codeproduitCryp = string.Empty;
                 string codebarreproduitCrypt = string.Empty;
 
                 string infoprodAcrypterRep;
+                //List<Produit> produits = new List<Produit>();
 
                 if (User.tpetoken.HasValue)
                 {
@@ -92,36 +86,64 @@ namespace GestionTPE
 
                     if (!match.Success)
                     {
-                        string codeproduitbrule = string.Empty;
-                        codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreproduitCrypt);
-                        var brule = Constantes.Burn.ToString();
-
-                        var cdburned = codeproduitbrule;
-
-                        Match codematch = Regex.Match(
-                            codeproduitbrule, "^KO[1-99]{1,2}$");
-
-                        //if (!match.Success)
-                        //{
-                        //}
+                        loyaltymodel.Statutcode = Constantes.Lock;
                     }
+                    else loyaltymodel.Statutcode = Constantes.EchecLock;
                 }
             }
         }
 
-        //[TestMethod]
-        //public void BrulerCodeProduit()
-        //{
-        //    if (User.tpetoken.HasValue)
-        //    {
-        //        //string codeproduitCrypt;
-        //        string codeproduitbrule = string.Empty;
+        [TestMethod]
+        public void AjouterProduit()
+        {
+            Produit produits = new Produit();
+            produits.codeproduit = LoyaltyModel.Codeproduit;
+            produits.codebarre = LoyaltyModel.Codebarre;
+            produits.pointproduit = LoyaltyModel.Pointproduit;
+            produits.statutcode = LoyaltyModel.Statutcode;
 
-        //        var client = new Client_OSS.OnlineServerServiceClient();
+            loyaltymodel.Produits.Add(produits);
+        }
 
-        //        //codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codeproduitCrypt);
-        //    }
-        //}
+        [TestMethod]
+        public void BrulerCodeBarre()
+        {
+            if (User.tpetoken.HasValue)
+            {
+                string codebarreproduitCrypt = string.Empty;
+                var client = new Client_OSS.OnlineServerServiceClient();
+                codebarreproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codebarre);
+                string codebarreproduitcryptRep = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreproduitCrypt);
+                string codebarreproduitdecryptRep = SecurityManager.Instance.decrypt((int)User.tpetoken, codebarreproduitcryptRep);
+
+                Match match = Regex.Match(codebarreproduitdecryptRep, "^KO[1-99]{1,2}$");
+                if (!match.Success)
+                {
+                    loyaltymodel.Statutcode = Constantes.Burn;
+                }
+                else loyaltymodel.Statutcode = Constantes.EchecBurn;
+            }
+        }
+
+        [TestMethod]
+        public void LibererCodeProduit()
+        {
+            if (User.tpetoken.HasValue)
+            {
+                string codebarreproduitCrypt = string.Empty;
+                var client = new Client_OSS.OnlineServerServiceClient();
+                codebarreproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codebarre);
+                string codebarreproduitcryptRep = client.FreeLoyaltyBarCode(User.codesite, User.numtpe, codebarreproduitCrypt);
+                string codebarreproduitdecryptRep = SecurityManager.Instance.decrypt((int)User.tpetoken, codebarreproduitcryptRep);
+
+                Match match = Regex.Match(codebarreproduitdecryptRep, "^KO[1-99]{1,2}$");
+                if (!match.Success)
+                {
+                    loyaltymodel.Statutcode = Constantes.Free;
+                }
+                else loyaltymodel.Statutcode = Constantes.EchecFreed;
+            }
+        }
     }
 }
 
@@ -146,3 +168,15 @@ namespace GestionTPE
 //public void ConnectIsTrue()
 //{
 //}
+//    string codeproduitbrule = string.Empty;
+//    codeproduitbrule = client.BurnLoyaltyBarCodeBarre(User.codesite, User.numtpe, codebarreproduitCrypt);
+//    var brule = Constantes.Burn.ToString();
+
+//    var cdburned = codeproduitbrule;
+
+//    Match codematch = Regex.Match(
+//        codeproduitbrule, "^KO[1-99]{1,2}$");
+
+//    //if (!match.Success)
+//    //{
+//    //}
