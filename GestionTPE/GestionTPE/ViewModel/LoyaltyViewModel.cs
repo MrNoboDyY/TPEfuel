@@ -22,7 +22,7 @@ namespace GestionTPE.ViewModel
     public class LoyaltyViewModel : ValidationRule
     {
         private LoyaltyModel loyaltymodel;
-        private EventHandler Timer_Tick;
+        //private EventHandler Timer_Tick;
 
         public LoyaltyViewModel()
         {
