@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -106,6 +107,8 @@ namespace GestionTPE.Model
         [StringLength(2)]
         private string codeproduit = string.Empty;
 
+        private Timer timer;
+
         [RegularExpression("^KO[1-99]{1,2}$", ErrorMessage = "Mauvaise saisie de Code Barre")]
         private string codebarre = string.Empty;
 
@@ -123,6 +126,18 @@ namespace GestionTPE.Model
         private Visibility visibiliteLocked;
         private Visibility visibiliteBurned;
         private Visibility visibiliteFree;
+
+        public Timer Timenow
+        {
+            get
+            {
+                return timer;
+            }
+            set
+            {
+                SetField(ref timer, value);
+            }
+        }
 
         public Visibility VisibiliteLocked
         {

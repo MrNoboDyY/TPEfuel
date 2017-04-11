@@ -19,7 +19,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label x:Name="numerodecarteLabel" Content="NumCarte * :" HorizontalAlignment="Stretch" Margin="10,46,790,112" FontWeight="Bold" />
-                <TextBox HorizontalAlignment="Stretch" Margin="166,46,249,112" TextWrapping="Wrap" Text="{Binding LoyaltyModel.NumeroDeCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" Background="LightBlue" BorderThickness="1" />
+                <TextBox HorizontalAlignment="Stretch" Margin="166,46,261,112" TextWrapping="Wrap" Text="{Binding LoyaltyModel.NumeroDeCarte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" Background="LightBlue" BorderThickness="1" />
                 <Label x:Name="historiquepointLabel" Content="Points Bruts" HorizontalAlignment="Stretch" Margin="10,113,790,0" VerticalAlignment="Top" Height="42" FontWeight="Bold" />
                 <TextBox IsEnabled="False" Background="LightBlue" HorizontalAlignment="Stretch" Margin="166,111,367,52" TextWrapping="Wrap" Text="{Binding LoyaltyModel.ReponseDecodee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" BorderThickness="1" FontWeight="Bold" />
                 <Button Command="{Binding SoldePointCommand}" Content="Valider" Margin="715,46,10,61" VerticalAlignment="Stretch" Height="Auto" Background="Green" BorderThickness="3" BorderBrush="#FF11BD18" />
@@ -52,8 +52,8 @@
                 <Button Command="{Binding RetourAccueilCommand}" Content="Retour Accueil" Height="Auto" Margin="722,355,27,13" Grid.Column="1" BorderBrush="#FF3E72CD" BorderThickness="3" />
                 <Label Name="lblcodeproduit" Content="codproduit" Height="26" Margin="20,26,794,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center" Width="138" />
                 <TextBox Name="codeproduit" Height="69" MaxLength="2" Text="{Binding LoyaltyModel.Codeproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   Margin="20,65,789,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.478" Grid.Column="1" BorderThickness="1" />
-                <TextBox Name="codebarre" HorizontalAlignment="Right" Height="66" Text="{Binding LoyaltyModel.Codebarre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,68,545,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" RenderTransformOrigin="1.71,0.391" Grid.Column="1" BorderThickness="1" />
-                <Button Name="ajouter" Content="Ajouter" Command="{Binding CodebarrePointCommand}" HorizontalAlignment="Left" Height="41" Margin="420,79,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1" BorderThickness="3" BorderBrush="#FF1672CF" />
+                <TextBox Name="codebarre" HorizontalAlignment="Right" Height="66" Text="{Binding LoyaltyModel.Codebarre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0,68,545,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" RenderTransformOrigin="1.71,0.391" Grid.Column="1" BorderThickness="1" />
+                <Button Name="ajouter" Content="Ajouter" Command="{Binding CodebarrePointCommand}" HorizontalAlignment="Left" Height="66" Margin="426,68,0,0" VerticalAlignment="Top" Width="186" Grid.Column="1" BorderThickness="3" BorderBrush="#FF1672CF" />
                 <TextBox Name="points" HorizontalAlignment="Left" IsEnabled="False" Text="{Binding LoyaltyModel.Pointproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="67" Margin="617,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Grid.Column="1" Foreground="Black" BorderThickness="1" />
                 <Label Name="lblpoints" Content="points" HorizontalAlignment="Center" Height="35" Margin="617,26,226,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="1.459,0.346" Grid.Column="1" FontWeight="Bold" />
                 <Label Name="lblcodebarre" Content="codebarre" Margin="199,26,545,0" Grid.Column="1" FontWeight="Bold" VerticalAlignment="Top" Height="26" />
@@ -67,15 +67,15 @@
                 <Grid.RowDefinitions>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Label Content="CODEPRODUIT" Margin="13,213,831,149" />
-                <Label Content="CODEBARRE" Margin="13,287,831,83" />
+                <Label Content="CODEPRODUIT" Margin="13,213,836,149" />
+                <Label Content="CODEBARRE" Margin="13,287,836,83" />
                 <Button Name="button" Content="Ajouter" Command="{Binding AjouterProduitCommand}" HorizontalAlignment="Left" Height="49" Margin="13,345,0,0" VerticalAlignment="Top" Width="349" />
 
                 <Button Name="validation" Content="Validation" HorizontalAlignment="Left" Height="Auto" Width="220" Margin="454,339,0,23" Background="Green" />
                 <Button Name="annulation" Content="Annulation" HorizontalAlignment="Left" Height="Auto" Width="211" Margin="709,268,0,94" Background="Red" />
-                <TextBox  Text="{Binding LoyaltyModel.Codeproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="54" Margin="111,213,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" />
-                <TextBox Text="{Binding LoyaltyModel.Codebarre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="47" Margin="112,286,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="101" />
-                <ListView Margin="10,8,20,0" Name="TOTOVIEW"
+                <TextBox  Text="{Binding LoyaltyModel.Codeproduit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="54" Margin="123,213,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="88" />
+                <TextBox Text="{Binding LoyaltyModel.Codebarre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="47" Margin="123,286,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="90" />
+                <ListView Margin="10,8,20,0" Name="listproduit"
     ItemsSource="{Binding Path=LoyaltyModel.Produits}"  Foreground="Black"   Height="200" VerticalAlignment="Top" BorderThickness="3" BorderBrush="#890E5DE8">
                     <ListView.View>
                         <GridView>
@@ -90,7 +90,7 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <Button Content="Retour Accueil" HorizontalAlignment="Left" Height="35" Margin="709,353,0,0" VerticalAlignment="Top" Width="211" />
+                <Button Content="Retour Accueil" Command="{Binding RetourAccueilCommand}" HorizontalAlignment="Left" Height="35" Margin="709,353,0,0" VerticalAlignment="Top" Width="211" />
                 <materialDesign:PackIcon Kind="Cards" Height="115" Foreground="DarkBlue" Width="220" Margin="454,216,0,0" />
             </Grid>
         </TabItem>

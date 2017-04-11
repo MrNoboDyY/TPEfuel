@@ -15,12 +15,14 @@ using System.Windows.Media;
 using System.Windows.Data;
 using GestionTPE.Common;
 using System.Collections.ObjectModel;
+using System.Windows.Threading;
 
 namespace GestionTPE.ViewModel
 {
     public class LoyaltyViewModel : ValidationRule
     {
         private LoyaltyModel loyaltymodel;
+        private EventHandler Timer_Tick;
 
         public LoyaltyViewModel()
         {
@@ -29,10 +31,19 @@ namespace GestionTPE.ViewModel
             loyaltymodel.Codebarre = string.Empty;
             //List<Produit> produits = new List<Produit>();
             loyaltymodel.Produits = new ObservableCollection<Produit>();
+            //DispatcherTimer timer = new DispatcherTimer();
+            //timer.Interval = TimeSpan.FromSeconds(1);
+            //timer.Tick += Timer_Tick;
+            //timer.Start();
 
             loyaltymodel.VisibiliteInformations = Visibility.Hidden;
             loyaltymodel.VisibiliteErreur = Visibility.Hidden;
         }
+
+        //private void Timer_Tick(object sender, EventArgs e)
+        //{
+        //    timer_Tick.Content = DateTime.Now.ToLongTimeString();
+        //}
 
         public LoyaltyModel LoyaltyModel
         {
@@ -50,12 +61,12 @@ namespace GestionTPE.ViewModel
 
         private bool CanShowSoldePointCarte()
         {
-            if (loyaltymodel.NumeroDeCarte != null)
+            if (loyaltymodel.NumeroDeCarte == null)
             {
-                return true;
+                return false;
             }
             else
-                return false;
+                return true;
         }
 
         public void ShowSoldePointCarte()
@@ -112,6 +123,18 @@ namespace GestionTPE.ViewModel
 
             if (User.tpetoken.HasValue)
             {
+                ///prévoir un foreach pour parcourir les codeproduit + codesbarre de tous les produits de la listView !!!!
+                ///du style
+                ///Produit produits = new Produit();
+                //produits.codeproduit = LoyaltyModel.Codeproduit;
+                //produits.codebarre = LoyaltyModel.Codebarre;
+                //produits.pointproduit = LoyaltyModel.Pointproduit;
+                //produits.statutcode = LoyaltyModel.Statutcode;
+                ///loyaltymodel.Produits.Add(produits);
+                ///foreach(Produit prod in produits ou listView.Items ou listproduit)
+                ///{  codeproduitCrypt = SecurityManager.Instance.encrypt......produits.codeproduit    }
+                ///{  codebarreCrypt = SecurityManager.Instance.encrypt.....produits.codebarre  }
+                ///ListView.Items
                 codeproduitCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codeproduit);
                 codebarreCrypt = SecurityManager.Instance.encrypt((int)User.tpetoken, loyaltymodel.Codebarre);
 
@@ -194,6 +217,16 @@ namespace GestionTPE.ViewModel
             return true;
         }
 
+        private bool CanAddProduit()
+        {
+            if (loyaltymodel.Codeproduit == null && loyaltymodel.Codebarre == null)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
         private bool CanBrulerCodeBarre()
         {
             if (loyaltymodel.Pointproduit != null)
@@ -216,7 +249,7 @@ namespace GestionTPE.ViewModel
 
         private bool CanShowCodebarrePoint()
         {
-            if (loyaltymodel.Codeproduit != null)
+            if (loyaltymodel.Codeproduit == null)
             {
                 return true;
             }
@@ -244,7 +277,7 @@ namespace GestionTPE.ViewModel
         {
             get
             {
-                return new ViewModelRelay(AjouterProduit);
+                return new ViewModelRelay(AjouterProduit, CanAddProduit);
             }
         }
 
